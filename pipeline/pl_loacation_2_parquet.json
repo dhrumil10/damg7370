@@ -134,8 +134,133 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "copy_parquet_2_location",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "copy_2_parquet_location",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.01:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"additionalColumns": [
+							{
+								"name": "DI_Created_Id",
+								"value": {
+									"value": "@pipeline().RunId",
+									"type": "Expression"
+								}
+							},
+							{
+								"name": "DI_created_date",
+								"value": {
+									"value": "@utcNow()",
+									"type": "Expression"
+								}
+							}
+						],
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "ParquetReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SnowflakeV2Sink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"sink": {
+									"name": "LOCATION_SK",
+									"type": "Int64"
+								}
+							},
+							{
+								"sink": {
+									"name": "ZIP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "city",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "state",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATE",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "DI_JOB_ID",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "DI_CREATED_DT",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_parquet_2_location",
+						"type": "DatasetReference",
+						"parameters": {
+							"locationfileparquet": "geo-data.parquet"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_snowflake_location",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
+		"parameters": {
+			"DI_JOB_ID": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
