@@ -326,7 +326,7 @@
 			}
 		],
 		"parameters": {
-			"jobid": {
+			"JobID": {
 				"type": "string"
 			}
 		},
