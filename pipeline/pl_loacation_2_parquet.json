@@ -29,7 +29,7 @@
 					"sink": {
 						"type": "ParquetSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobStorageWriteSettings"
 						},
 						"formatSettings": {
 							"type": "ParquetWriteSettings"
@@ -241,7 +241,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_read_parquets",
+						"referenceName": "ds_source_location_2_parquet",
 						"type": "DatasetReference"
 					}
 				],
