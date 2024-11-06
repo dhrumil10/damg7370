@@ -127,10 +127,10 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_location",
+						"referenceName": "ds_stgseattle",
 						"type": "DatasetReference",
 						"parameters": {
-							"filename": "geo-data.csv"
+							"FileName": "Seattle_Pet_Licenses_20241007 (1).tsv"
 						}
 					}
 				],
