@@ -20,16 +20,26 @@
 					"description": "Add souselect NVL(MAX(location_sk),0) as MaxBreedSK from BREED_DIMrce dataset"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "union1"
 				},
 				{
 					"name": "surrogateKey1"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
+				"parameters{",
+				"     Job_ID as string (\"1\")",
+				"}",
 				"source(output(",
 				"          LOCATION_SK as string,",
 				"          ZIP as string,",
@@ -55,7 +65,13 @@
 				"sourceslocation, sourceSK union(byName: true)~> union1",
 				"union1 keyGenerate(output(LOCATION_SK as long),",
 				"     startAt: 1L,",
-				"     stepValue: 1L) ~> surrogateKey1"
+				"     stepValue: 1L) ~> surrogateKey1",
+				"surrogateKey1 derive(DI_JOB_ID = $Job_ID,",
+				"          DI_CREATED_DT = toString(currentDate(),'yyyy-MM-dd')) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
