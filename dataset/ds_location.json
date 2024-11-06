@@ -8,7 +8,7 @@
 		"parameters": {
 			"filename": {
 				"type": "string",
-				"defaultValue": "geo-data"
+				"defaultValue": "geo-data.csv"
 			}
 		},
 		"annotations": [],
