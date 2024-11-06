@@ -1,0 +1,54 @@
+{
+	"name": "ds_parquet_2_location",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_location",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"locationfileparquet": {
+				"type": "string",
+				"defaultValue": "geo-data.parquet"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().locationfileparquet",
+					"type": "Expression"
+				},
+				"fileSystem": "silvercontainer"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "state_fips",
+				"type": "UTF8"
+			},
+			{
+				"name": "state",
+				"type": "UTF8"
+			},
+			{
+				"name": "state_abbr",
+				"type": "UTF8"
+			},
+			{
+				"name": "zipcode",
+				"type": "UTF8"
+			},
+			{
+				"name": "county",
+				"type": "UTF8"
+			},
+			{
+				"name": "city",
+				"type": "UTF8"
+			}
+		]
+	}
+}
