@@ -10,14 +10,17 @@
 						"type": "DatasetReference"
 					},
 					"name": "inputsource"
+				},
+				{
+					"dataset": {
+						"referenceName": "ds_snowflake_location",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "derivedColumn1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"parameters{",
 				"     DI_JOB_ID as string (\"23\"),",
@@ -35,8 +38,10 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> inputsource",
-				"inputsource derive(DI_JOB_id = ERROR_FUNCTION(''),",
-				"          Location_Sk = ERROR_FUNCTION('')) ~> derivedColumn1"
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     query: 'select NVL(MAX(Location_sk),0) as  from Staging.LOCATION_DIM;',",
+				"     format: 'query') ~> source1"
 			]
 		}
 	}
