@@ -296,7 +296,7 @@
 					}
 				],
 				"policy": {
-					"timeout": "0.12:00:00",
+					"timeout": "0.01:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
@@ -306,7 +306,10 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "df_loation_dim",
-						"type": "DataFlowReference"
+						"type": "DataFlowReference",
+						"parameters": {
+							"JObID": "DI_JOB_ID"
+						}
 					},
 					"compute": {
 						"coreCount": 8,
