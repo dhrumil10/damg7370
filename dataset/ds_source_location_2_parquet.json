@@ -17,31 +17,27 @@
 		},
 		"schema": [
 			{
-				"name": "License_Issue_Date",
+				"name": "state_fips",
 				"type": "UTF8"
 			},
 			{
-				"name": "License_Number",
+				"name": "state",
 				"type": "UTF8"
 			},
 			{
-				"name": "Animal_Name",
+				"name": "state_abbr",
 				"type": "UTF8"
 			},
 			{
-				"name": "Species",
+				"name": "zipcode",
 				"type": "UTF8"
 			},
 			{
-				"name": "Primary_Breed",
+				"name": "county",
 				"type": "UTF8"
 			},
 			{
-				"name": "Secondary_Breed",
-				"type": "UTF8"
-			},
-			{
-				"name": "ZIP_Code",
+				"name": "city",
 				"type": "UTF8"
 			}
 		]
