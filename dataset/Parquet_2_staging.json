@@ -1,0 +1,19 @@
+{
+	"name": "Parquet_2_staging",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_stgadfseattle",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Seattle_Pet_Licenses_20241007 (1).parquet"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
