@@ -223,16 +223,6 @@
 							},
 							{
 								"source": {
-									"name": "zipcode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ZIP",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "city",
 									"type": "String"
 								},
@@ -248,6 +238,16 @@
 								},
 								"sink": {
 									"name": "STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "zipcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ZIP",
 									"type": "String"
 								}
 							},
