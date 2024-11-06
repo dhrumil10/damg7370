@@ -193,6 +193,13 @@
 						}
 					},
 					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "ls_blob_storage",
+							"type": "LinkedServiceReference"
+						},
+						"path": "silvercontainer"
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
