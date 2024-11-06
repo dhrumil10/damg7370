@@ -28,7 +28,7 @@
 			},
 			{
 				"name": "DI_JOB_ID",
-				"type": "DATE"
+				"type": "VARCHAR"
 			},
 			{
 				"name": "DI_CREATED_DT",
