@@ -10,14 +10,6 @@
 						"type": "DatasetReference"
 					},
 					"name": "sourceslocation"
-				},
-				{
-					"dataset": {
-						"referenceName": "ds_snowflake_location",
-						"type": "DatasetReference"
-					},
-					"name": "sourceSK",
-					"description": "Add souselect NVL(MAX(location_sk),0) as MaxBreedSK from BREED_DIMrce dataset"
 				}
 			],
 			"sinks": [
@@ -55,22 +47,11 @@
 				"     allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     format: 'table') ~> sourceslocation",
-				"source(output(",
-				"          LOCATION_SK as string,",
-				"          ZIP as string,",
-				"          CITY as string,",
-				"          STATE as string,",
-				"          DI_JOB_ID as string,",
-				"          DI_CREATED_DT as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     format: 'table') ~> sourceSK",
-				"sourceslocation, sourceSK union(byName: true)~> union1",
+				"sourceslocation union(byName: true)~> union1",
 				"union1 keyGenerate(output(LOCATION_SK as long),",
 				"     startAt: 1L,",
 				"     stepValue: 1L) ~> surrogateKey1",
-				"surrogateKey1 derive(DI_JOB_ID = $Job_ID,",
+				"surrogateKey1 derive(DI_JOB_ID = DI_JOB_ID,",
 				"          DI_CREATED_DT = toString(currentDate(),'yyyy-MM-dd')) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
