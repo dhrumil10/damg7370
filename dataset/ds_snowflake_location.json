@@ -32,7 +32,7 @@
 			},
 			{
 				"name": "DI_CREATED_DT",
-				"type": "DATE"
+				"type": "TIMESTAMP_TZ"
 			}
 		],
 		"typeProperties": {
