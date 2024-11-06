@@ -49,7 +49,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'table') ~> sourceSK",
-				"sourceslocation union(byName: true)~> union1"
+				"sourceslocation union(byName: false)~> union1"
 			]
 		}
 	}
