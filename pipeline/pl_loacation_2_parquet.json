@@ -169,13 +169,27 @@
 					"sink": {
 						"type": "SnowflakeV2Sink",
 						"importSettings": {
-							"type": "SnowflakeImportCopyCommand"
+							"type": "SnowflakeImportCopyCommand",
+							"storageIntegration": {
+								"value": "@utcNow()",
+								"type": "Expression"
+							}
 						}
 					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
+							{
+								"source": {
+									"name": "state_fips",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION_SK",
+									"type": "Int64"
+								}
+							},
 							{
 								"source": {
 									"name": "zipcode",
@@ -263,6 +277,10 @@
 		"parameters": {
 			"DI_sk_id": {
 				"type": "String"
+			},
+			"jobid": {
+				"type": "String",
+				"defaultValue": "\"1\""
 			}
 		},
 		"annotations": []
