@@ -34,6 +34,9 @@
 				},
 				{
 					"name": "surrogateKey1"
+				},
+				{
+					"name": "aggregate1"
 				}
 			],
 			"scriptLines": [
@@ -53,16 +56,18 @@
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> inputsource",
 				"source(output(",
-				"          LOCATION_SK as decimal(10,0)",
+				"          LOCATION_SK as integer",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     query: 'select NVL(MAX(Location_sk),0) as location_sk  from LOCATION_DIM',",
 				"     format: 'query') ~> sourcelocationsk",
-				"inputsource, sourcelocationsk union(byName: true)~> union1",
-				"union1 keyGenerate(output(Location_Sk as long),",
+				"inputsource, sourcelocationsk union(byName: true,",
+				"     partitionBy('hash', 1))~> union1",
+				"aggregate1 keyGenerate(output(Location_Sk as long),",
 				"     startAt: 1L,",
 				"     stepValue: 1L) ~> surrogateKey1",
+				"union1 aggregate() ~> aggregate1",
 				"surrogateKey1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
