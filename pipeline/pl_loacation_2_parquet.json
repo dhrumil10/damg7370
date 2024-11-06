@@ -199,6 +199,10 @@
 								}
 							},
 							{
+								"source": {
+									"name": "zipcode",
+									"type": "String"
+								},
 								"sink": {
 									"name": "ZIP",
 									"type": "String"
@@ -225,12 +229,20 @@
 								}
 							},
 							{
+								"source": {
+									"name": "DI_Created_Id",
+									"type": "String"
+								},
 								"sink": {
 									"name": "DI_JOB_ID",
 									"type": "DateTime"
 								}
 							},
 							{
+								"source": {
+									"name": "DI_created_date",
+									"type": "String"
+								},
 								"sink": {
 									"name": "DI_CREATED_DT",
 									"type": "DateTime"
