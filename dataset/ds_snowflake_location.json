@@ -2,7 +2,7 @@
 	"name": "ds_snowflake_location",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_snowflakeseattle",
+			"referenceName": "Snowflakelocation",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
