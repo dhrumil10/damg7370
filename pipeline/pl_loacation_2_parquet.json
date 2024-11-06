@@ -180,6 +180,13 @@
 									"value": "@utcNow()",
 									"type": "Expression"
 								}
+							},
+							{
+								"name": "location_sk",
+								"value": {
+									"value": "@pipeline().parameters.DI_sk_id",
+									"type": "Expression"
+								}
 							}
 						],
 						"storeSettings": {
@@ -217,7 +224,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "state_fips",
+									"name": "location_sk",
 									"type": "String"
 								},
 								"sink": {
