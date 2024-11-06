@@ -110,24 +110,6 @@
 									"type": "String",
 									"physicalType": "UTF8"
 								}
-							},
-							{
-								"source": {
-									"name": "Created_ID",
-									"type": "String"
-								},
-								"sink": {
-									"name": "CREATED_ID"
-								}
-							},
-							{
-								"source": {
-									"name": "Created_dy",
-									"type": "Date"
-								},
-								"sink": {
-									"name": "Created_dt"
-								}
 							}
 						],
 						"typeConversion": true,
@@ -222,18 +204,6 @@
 								"sink": {
 									"name": "STATE",
 									"type": "String"
-								}
-							},
-							{
-								"sink": {
-									"name": "DI_JOB_ID",
-									"type": "DateTime"
-								}
-							},
-							{
-								"sink": {
-									"name": "DI_JOB_ID",
-									"type": "DateTime"
 								}
 							}
 						]
