@@ -212,12 +212,20 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
+								"source": {
+									"name": "state_fips",
+									"type": "String"
+								},
 								"sink": {
-									"name": "LOCATION_SK",
-									"type": "Int64"
+									"name": "STATE",
+									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "zipcode",
+									"type": "String"
+								},
 								"sink": {
 									"name": "ZIP",
 									"type": "String"
@@ -244,6 +252,10 @@
 								}
 							},
 							{
+								"source": {
+									"name": "DI_CreatedID",
+									"type": "String"
+								},
 								"sink": {
 									"name": "DI_JOB_ID",
 									"type": "String"
