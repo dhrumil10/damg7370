@@ -217,8 +217,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"name": "STATE",
-									"type": "String"
+									"name": "LOCATION_SK",
+									"type": "Int64"
 								}
 							},
 							{
