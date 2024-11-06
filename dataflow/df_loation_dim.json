@@ -24,6 +24,9 @@
 			"transformations": [
 				{
 					"name": "union1"
+				},
+				{
+					"name": "surrogateKey1"
 				}
 			],
 			"scriptLines": [
@@ -49,7 +52,10 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'table') ~> sourceSK",
-				"sourceslocation union(byName: false)~> union1"
+				"sourceslocation, sourceSK union(byName: true)~> union1",
+				"union1 keyGenerate(output(LOCATION_SK as long),",
+				"     startAt: 1L,",
+				"     stepValue: 1L) ~> surrogateKey1"
 			]
 		}
 	}
