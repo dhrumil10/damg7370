@@ -2,7 +2,7 @@
 	"name": "ds_Parquet_2_staging",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_stgadfseattle",
+			"referenceName": "ls_location",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
