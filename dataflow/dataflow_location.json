@@ -13,8 +13,16 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
 			"scriptLines": [
+				"parameters{",
+				"     DI_JOB_ID as string (\"23\"),",
+				"     location_sk as integer (1)",
+				"}",
 				"source(output(",
 				"          state_fips as string,",
 				"          state as string,",
@@ -26,7 +34,9 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     format: 'parquet') ~> inputsource"
+				"     format: 'parquet') ~> inputsource",
+				"inputsource derive(DI_JOB_id = ERROR_FUNCTION(''),",
+				"          Location_Sk = ERROR_FUNCTION('')) ~> derivedColumn1"
 			]
 		}
 	}
