@@ -157,6 +157,22 @@
 				"typeProperties": {
 					"source": {
 						"type": "ParquetSource",
+						"additionalColumns": [
+							{
+								"name": "DI_CreatedID",
+								"value": {
+									"value": "@pipeline().parameters.jobid",
+									"type": "Expression"
+								}
+							},
+							{
+								"name": "DI_Created_dt",
+								"value": {
+									"value": "@utcNow()",
+									"type": "Expression"
+								}
+							}
+						],
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
