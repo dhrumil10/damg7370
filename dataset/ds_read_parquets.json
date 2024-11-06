@@ -2,16 +2,16 @@
 	"name": "ds_read_parquets",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_stgadfseattle",
+			"referenceName": "ls_blob_storage",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
+				"type": "AzureBlobStorageLocation",
 				"fileName": "Seattle_Pet_Licenses_20241007 (1).parquet",
-				"fileSystem": "silvercontainer"
+				"container": "silvercontainer"
 			},
 			"compressionCodec": "snappy"
 		},
