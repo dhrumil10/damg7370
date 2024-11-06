@@ -350,7 +350,7 @@
 			}
 		],
 		"parameters": {
-			"Creadted_jo_id": {
+			"jobid": {
 				"type": "string"
 			}
 		},
