@@ -157,29 +157,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "ParquetSource",
-						"additionalColumns": [
-							{
-								"name": "DI_Created_Id",
-								"value": {
-									"value": "@pipeline().RunId",
-									"type": "Expression"
-								}
-							},
-							{
-								"name": "DI_created_date",
-								"value": {
-									"value": "@utcNow()",
-									"type": "Expression"
-								}
-							},
-							{
-								"name": "DI_SK",
-								"value": {
-									"value": "@pipeline().parameters.DI_sk_id",
-									"type": "Expression"
-								}
-							}
-						],
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
@@ -264,11 +241,8 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_parquet_2_location",
-						"type": "DatasetReference",
-						"parameters": {
-							"locationfileparquet": "geo-data.parquet"
-						}
+						"referenceName": "ds_read_parquets",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
