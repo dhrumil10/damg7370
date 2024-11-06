@@ -47,7 +47,7 @@
 		],
 		"typeProperties": {
 			"schema": "STAGING",
-			"table": "SEATTLE_PET_LICENSES"
+			"table": "LOCATION_DIM"
 		}
 	}
 }
