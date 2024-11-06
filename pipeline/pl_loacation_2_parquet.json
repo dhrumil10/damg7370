@@ -42,7 +42,7 @@
 							{
 								"source": {
 									"name": "state_fips",
-									"type": "String",
+									"type": "Int32",
 									"physicalType": "String"
 								},
 								"sink": {
