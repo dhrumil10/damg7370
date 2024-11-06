@@ -197,6 +197,10 @@
 							"type": "SnowflakeImportCopyCommand",
 							"additionalFormatOptions": {
 								"DATE_FORMAT": "'MM/DD/yyyy HH:mm:ss'"
+							},
+							"storageIntegration": {
+								"value": "@pipeline().parameters.jobid",
+								"type": "Expression"
 							}
 						}
 					},
