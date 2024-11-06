@@ -170,7 +170,7 @@
 							{
 								"name": "DI_CreatedID",
 								"value": {
-									"value": "@pipeline().parameters.jobid",
+									"value": "@pipeline().RunId",
 									"type": "Expression"
 								}
 							},
@@ -224,7 +224,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "location_sk",
+									"name": "state_fips",
 									"type": "String"
 								},
 								"sink": {
