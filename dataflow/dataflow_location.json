@@ -16,16 +16,12 @@
 						"referenceName": "ds_snowflake_location",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "sourcelocationsk"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"parameters{",
-				"     DI_JOB_ID as string (\"23\"),",
-				"     location_sk as integer (1)",
-				"}",
 				"source(output(",
 				"          state_fips as string,",
 				"          state as string,",
@@ -41,7 +37,7 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     query: 'select NVL(MAX(Location_sk),0) as  from Staging.LOCATION_DIM;',",
-				"     format: 'query') ~> source1"
+				"     format: 'query') ~> sourcelocationsk"
 			]
 		}
 	}
