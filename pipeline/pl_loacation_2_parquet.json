@@ -306,13 +306,7 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "df_loation_dim",
-						"type": "DataFlowReference",
-						"parameters": {
-							"Job_ID": {
-								"value": "'@{pipeline().parameters.DI_sk_id}'",
-								"type": "Expression"
-							}
-						}
+						"type": "DataFlowReference"
 					},
 					"compute": {
 						"coreCount": 8,
