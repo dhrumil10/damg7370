@@ -5,14 +5,46 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"name": "source1"
+					"dataset": {
+						"referenceName": "ds_snowflake_location",
+						"type": "DatasetReference"
+					},
+					"name": "sourceslocation"
+				},
+				{
+					"dataset": {
+						"referenceName": "ds_snowflake_location",
+						"type": "DatasetReference"
+					},
+					"name": "sourcemaxsk",
+					"description": "Add souselect NVL(MAX(location_sk),0) as MaxBreedSK from BREED_DIMrce dataset"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1"
+				"source(output(",
+				"          LOCATION_SK as string,",
+				"          ZIP as string,",
+				"          CITY as string,",
+				"          STATE as string,",
+				"          DI_JOB_ID as string,",
+				"          DI_CREATED_DT as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'table') ~> sourceslocation",
+				"source(output(",
+				"          LOCATION_SK as string,",
+				"          ZIP as string,",
+				"          CITY as string,",
+				"          STATE as string,",
+				"          DI_JOB_ID as string,",
+				"          DI_CREATED_DT as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'table') ~> sourcemaxsk"
 			]
 		}
 	}
