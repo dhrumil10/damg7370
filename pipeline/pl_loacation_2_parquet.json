@@ -153,7 +153,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "silvercontainer//geo-data.parquet"
+					},
+					{
+						"name": "Destination",
+						"value": "STAGING.LOCATION_DIM"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "ParquetSource",
@@ -185,7 +194,10 @@
 					"sink": {
 						"type": "SnowflakeV2Sink",
 						"importSettings": {
-							"type": "SnowflakeImportCopyCommand"
+							"type": "SnowflakeImportCopyCommand",
+							"additionalFormatOptions": {
+								"DATE_FORMAT": "'YYYY/MM/DD HH:mm:ss'"
+							}
 						}
 					},
 					"enableStaging": true,
@@ -270,7 +282,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_snowflake_location",
+						"referenceName": "ds_snowflaje_stg",
 						"type": "DatasetReference"
 					}
 				]
