@@ -2,16 +2,16 @@
 	"name": "ds_source_location_2_parquet",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_blob_storage",
+			"referenceName": "ls_location",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
+				"type": "AzureBlobFSLocation",
 				"fileName": "geo-data.parquet",
-				"container": "silvercontainer"
+				"fileSystem": "silvercontainer"
 			},
 			"compressionCodec": "snappy"
 		},
