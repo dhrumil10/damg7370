@@ -15,10 +15,14 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_snowflake_location",
+						"referenceName": "SnowflakeTable1",
 						"type": "DatasetReference"
 					},
-					"name": "sinkoplocation"
+					"name": "sinkoplocation",
+					"rejectedDataLinkedService": {
+						"referenceName": "ls_blob_storage",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [
