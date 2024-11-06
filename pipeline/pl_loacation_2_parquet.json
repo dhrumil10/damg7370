@@ -282,7 +282,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_snowflaje_stg",
+						"referenceName": "ds_snowflake_location",
 						"type": "DatasetReference"
 					}
 				]
