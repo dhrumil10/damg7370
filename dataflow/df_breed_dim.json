@@ -46,7 +46,7 @@
 				"     format: 'table') ~> sorcesnowflakestage",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     query: 'select NVL(MAX(BREED_SK),0) as MaxBreedSK from STAGGING.BREED_DIM',",
+				"     query: 'select NVL(MAX(BREED_SK),0) as MaxBreedSK from DEV_DB.STAGGING.BREED_DIM',",
 				"     format: 'query') ~> sourcebreeddim",
 				"sorcesnowflakestage, sourcebreeddim join(1==1,",
 				"     joinType:'cross',",
