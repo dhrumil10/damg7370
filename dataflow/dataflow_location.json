@@ -51,7 +51,7 @@
 				"     format: 'parquet') ~> inputsource",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     query: 'select NVL(MAX(Location_sk),0) as  from LOCATION_DIM;',",
+				"     query: 'select NVL(MAX(Location_sk),0) as location_sk  from LOCATION_DIM;',",
 				"     format: 'query') ~> sourcelocationsk",
 				"inputsource, sourcelocationsk union(byName: false)~> union1",
 				"union1 keyGenerate(output(Location_Sk as long),",
