@@ -269,7 +269,7 @@
 			}
 		],
 		"parameters": {
-			"DI_JOB_ID": {
+			"DI_sk_id": {
 				"type": "String"
 			}
 		},
