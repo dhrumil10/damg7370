@@ -235,6 +235,26 @@
 									"name": "STATE",
 									"type": "String"
 								}
+							},
+							{
+								"source": {
+									"name": "DI_CreatedID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DI_JOB_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DI_Created_dt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DI_CREATED_DT",
+									"type": "DateTime"
+								}
 							}
 						]
 					}
