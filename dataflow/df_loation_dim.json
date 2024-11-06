@@ -42,7 +42,7 @@
 			],
 			"scriptLines": [
 				"parameters{",
-				"     Job_ID as string (\"1\")",
+				"     JObID as string (\"1\")",
 				"}",
 				"source(output(",
 				"          LOCATION_SK as decimal(10,0),",
@@ -52,7 +52,7 @@
 				"          DI_JOB_ID as string,",
 				"          DI_CREATED_DT as timestamp",
 				"     ),",
-				"     allowSchemaDrift: true,",
+				"     allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     format: 'table') ~> sourceslocation",
 				"source(output(",
