@@ -1,5 +1,5 @@
 {
-	"name": "Parquet_2_staging",
+	"name": "ds_Parquet_2_staging",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_stgadfseattle",
