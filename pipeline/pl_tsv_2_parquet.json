@@ -260,6 +260,9 @@
 								}
 							},
 							{
+								"source": {
+									"name": "DI_Created_date"
+								},
 								"sink": {
 									"name": "DI_CREATED_DATE",
 									"type": "DateTime"
