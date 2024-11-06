@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ds_snowflake_location",
+						"referenceName": "SnowflakeTable1",
 						"type": "DatasetReference"
 					},
 					"name": "sourceslocation"
@@ -37,14 +37,14 @@
 				"     JObID as string (\"1\")",
 				"}",
 				"source(output(",
-				"          LOCATION_SK as decimal(10,0),",
+				"          LOCATION_SK as integer,",
 				"          ZIP as string,",
 				"          CITY as string,",
 				"          STATE as string,",
 				"          DI_JOB_ID as string,",
-				"          DI_CREATED_DT as timestamp",
+				"          DI_CREATED_DT as string",
 				"     ),",
-				"     allowSchemaDrift: false,",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'table') ~> sourceslocation",
 				"sourceslocation union(byName: true)~> union1",
