@@ -196,7 +196,7 @@
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand",
 							"additionalFormatOptions": {
-								"DATE_FORMAT": "'YYYY/MM/DD HH:mm:ss'"
+								"DATE_FORMAT": "'MM/DD/yyyy HH:mm:ss'"
 							}
 						}
 					},
