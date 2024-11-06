@@ -209,6 +209,10 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
+								"source": {
+									"name": "state_fips",
+									"type": "String"
+								},
 								"sink": {
 									"name": "LOCATION_SK",
 									"type": "Int64"
