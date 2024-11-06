@@ -16,12 +16,16 @@
 						"referenceName": "ds_snowflake_location",
 						"type": "DatasetReference"
 					},
-					"name": "sourcemaxsk",
+					"name": "sourceSK",
 					"description": "Add souselect NVL(MAX(location_sk),0) as MaxBreedSK from BREED_DIMrce dataset"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "union1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          LOCATION_SK as string,",
@@ -44,7 +48,8 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     format: 'table') ~> sourcemaxsk"
+				"     format: 'table') ~> sourceSK",
+				"sourceslocation union(byName: true)~> union1"
 			]
 		}
 	}
