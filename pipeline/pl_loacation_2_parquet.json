@@ -180,6 +180,10 @@
 									"value": "@utcNow()",
 									"type": "Expression"
 								}
+							},
+							{
+								"name": "Location_sk",
+								"value": "$$FILENAME"
 							}
 						],
 						"storeSettings": {
