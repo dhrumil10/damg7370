@@ -47,7 +47,7 @@
 		],
 		"typeProperties": {
 			"schema": "STAGING",
-			"table": "LOCATION_DIM"
+			"table": "BREED_DIM"
 		}
 	}
 }
