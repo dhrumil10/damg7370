@@ -143,9 +143,14 @@
 			{
 				"name": "parquet2sstagetable",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "df_breed_load",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.01:00:00",
 					"retry": 0,
@@ -308,9 +313,14 @@
 			{
 				"name": "df_breed_load",
 				"type": "ExecuteDataFlow",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "copy_2_silver_as_parquet",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.01:00:00",
 					"retry": 0,
@@ -327,6 +337,11 @@
 							"DI_JOB_ID": {
 								"value": "'@{pipeline().RunId}'",
 								"type": "Expression"
+							}
+						},
+						"datasetParameters": {
+							"oppar": {
+								"file_name": "dim_breed_skt"
 							}
 						}
 					},
