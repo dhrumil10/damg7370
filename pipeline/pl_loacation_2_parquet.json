@@ -180,10 +180,6 @@
 									"value": "@utcNow()",
 									"type": "Expression"
 								}
-							},
-							{
-								"name": "SK",
-								"value": "1"
 							}
 						],
 						"storeSettings": {
@@ -331,10 +327,6 @@
 			}
 		],
 		"parameters": {
-			"DI_sk_id": {
-				"type": "int",
-				"defaultValue": 1
-			},
 			"jobid": {
 				"type": "String",
 				"defaultValue": "\"1\""
