@@ -47,7 +47,7 @@
 				"          ZIPCode as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
+				"     validateSchema: true,",
 				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: true,",
 				"     format: 'parquet') ~> oppar",
