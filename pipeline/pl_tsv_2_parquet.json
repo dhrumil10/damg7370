@@ -355,7 +355,8 @@
 		],
 		"parameters": {
 			"JobID": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "\"59\""
 			}
 		},
 		"annotations": []
