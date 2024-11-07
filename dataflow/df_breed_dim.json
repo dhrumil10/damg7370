@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "parq_2_df",
+						"referenceName": "ds_read_parquets",
 						"type": "DatasetReference"
 					},
 					"name": "oppar"
@@ -44,7 +44,7 @@
 				"          Species as string,",
 				"          Primary_Breed as string,",
 				"          Secondary_Breed as string,",
-				"          ZIPCode as string",
+				"          ZIP_Code as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: true,",
