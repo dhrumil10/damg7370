@@ -2,7 +2,7 @@
 	"name": "ds_location",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_blob_storage",
+			"referenceName": "ls_stgadfseattle",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -15,12 +15,12 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
+				"type": "AzureBlobFSLocation",
 				"fileName": {
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"container": "rawcontainer"
+				"fileSystem": "rawcontainer"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
