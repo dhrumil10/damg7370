@@ -140,7 +140,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "copy_2_parquet_location",
+						"activity": "Data flow1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -292,14 +292,14 @@
 				"type": "ExecuteDataFlow",
 				"dependsOn": [
 					{
-						"activity": "copy_parquet_2_location",
+						"activity": "copy_2_parquet_location",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					}
 				],
 				"policy": {
-					"timeout": "0.01:00:00",
+					"timeout": "0.12:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
@@ -308,10 +308,18 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "df_loation_dim",
+						"referenceName": "dataflow_location",
 						"type": "DataFlowReference",
 						"parameters": {
-							"JObID": "DI_JOB_ID"
+							"DI_CREATED_ID": {
+								"value": "@pipeline().parameters.jobid",
+								"type": "Expression"
+							}
+						},
+						"datasetParameters": {
+							"inputsource": {
+								"locationfileparquet": "geo-data.parquet"
+							}
 						}
 					},
 					"compute": {
