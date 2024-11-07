@@ -314,14 +314,7 @@
 			{
 				"name": "df_breed_load",
 				"type": "ExecuteDataFlow",
-				"dependsOn": [
-					{
-						"activity": "parquet2sstagetable",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.01:00:00",
 					"retry": 0,
