@@ -180,13 +180,6 @@
 									"value": "@utcNow()",
 									"type": "Expression"
 								}
-							},
-							{
-								"name": "Location_sk",
-								"value": {
-									"value": "@pipeline().parameters.jobid",
-									"type": "Expression"
-								}
 							}
 						],
 						"storeSettings": {
@@ -217,7 +210,8 @@
 						"mappings": [
 							{
 								"source": {
-									"name": ""
+									"name": "LOCATION_SK",
+									"type": "Int64"
 								},
 								"sink": {
 									"name": "LOCATION_SK",
