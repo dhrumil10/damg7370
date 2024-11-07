@@ -197,14 +197,7 @@
 							"type": "SnowflakeImportCopyCommand"
 						}
 					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "ls_blob_storage",
-							"type": "LinkedServiceReference"
-						},
-						"path": "silvercontainer"
-					},
+					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
