@@ -46,9 +46,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "License Issue Date",
-									"type": "String",
-									"physicalType": "UTF8"
+									"name": "License_Issue_Date",
+									"type": "UTF8"
 								}
 							},
 							{
@@ -58,9 +57,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "License Number",
-									"type": "String",
-									"physicalType": "UTF8"
+									"name": "License_Number",
+									"type": "UTF8"
 								}
 							},
 							{
@@ -70,9 +68,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Animal's Name",
-									"type": "String",
-									"physicalType": "UTF8"
+									"name": "Animal_Name",
+									"type": "UTF8"
 								}
 							},
 							{
@@ -94,9 +91,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Primary Breed",
-									"type": "String",
-									"physicalType": "UTF8"
+									"name": "Primary_Breed",
+									"type": "UTF8"
 								}
 							},
 							{
@@ -106,9 +102,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Secondary Breed",
-									"type": "String",
-									"physicalType": "UTF8"
+									"name": "Secondary_Breed",
+									"type": "UTF8"
 								}
 							},
 							{
@@ -118,9 +113,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "ZIP Code",
-									"type": "String",
-									"physicalType": "UTF8"
+									"name": "ZIPCode"
 								}
 							}
 						],
@@ -152,14 +145,7 @@
 				"type": "Copy",
 				"state": "Inactive",
 				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "copy_2_silver_as_parquet",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.01:00:00",
 					"retry": 0,
