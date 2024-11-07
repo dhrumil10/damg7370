@@ -5,9 +5,9 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "ds_read_parquets",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "ls_blob_storage",
+						"type": "LinkedServiceReference"
 					},
 					"name": "sorcesnowflakestage"
 				},
@@ -48,20 +48,12 @@
 				"parameters{",
 				"     DI_JOB_ID as string (\"59\")",
 				"}",
-				"source(output(",
-				"          License_Issue_Date as string,",
-				"          License_Number as string,",
-				"          Animal_Name as string,",
-				"          Species as string,",
-				"          Primary_Breed as string,",
-				"          Secondary_Breed as string,",
-				"          ZIP_Code as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: true,",
-				"     inferDriftedColumnTypes: true,",
+				"source(allowSchemaDrift: false,",
+				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     format: 'parquet') ~> sorcesnowflakestage",
+				"     format: 'parquet',",
+				"     container: 'silvercontainer',",
+				"     fileName: 'dim_breed_skt') ~> sorcesnowflakestage",
 				"source(output(",
 				"          MAXBREEDSK as decimal(10,0)",
 				"     ),",
