@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "geo-data.parquet",
+				"fileName": "dim_location_skt",
 				"container": "silvercontainer"
 			},
 			"compressionCodec": "snappy"
