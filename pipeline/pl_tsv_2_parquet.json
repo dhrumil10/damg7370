@@ -46,7 +46,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "License_Issue_Date",
+									"name": "License Issue Date",
+									"type": "String",
 									"physicalType": "UTF8"
 								}
 							},
@@ -57,7 +58,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "License_Number",
+									"name": "License Number",
+									"type": "String",
 									"physicalType": "UTF8"
 								}
 							},
@@ -68,7 +70,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Animal_Name",
+									"name": "Animal's Name",
+									"type": "String",
 									"physicalType": "UTF8"
 								}
 							},
@@ -91,7 +94,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Primary_Breed",
+									"name": "Primary Breed",
+									"type": "String",
 									"physicalType": "UTF8"
 								}
 							},
@@ -102,7 +106,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Secondary_Breed",
+									"name": "Secondary Breed",
+									"type": "String",
 									"physicalType": "UTF8"
 								}
 							},
@@ -113,7 +118,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "ZIP_Code",
+									"name": "ZIP Code",
+									"type": "String",
 									"physicalType": "UTF8"
 								}
 							}
@@ -137,13 +143,18 @@
 				"outputs": [
 					{
 						"referenceName": "ds_Parquet_2_staging",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "Seattle_Pet_Licenses_20241007 (1).parquet"
+						}
 					}
 				]
 			},
 			{
 				"name": "parquet2sstagetable",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "copy_2_silver_as_parquet",
@@ -314,6 +325,8 @@
 			{
 				"name": "df_breed_load",
 				"type": "ExecuteDataFlow",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.01:00:00",
