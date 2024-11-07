@@ -29,7 +29,7 @@
 					"sink": {
 						"type": "ParquetSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobStorageWriteSettings"
 						},
 						"formatSettings": {
 							"type": "ParquetWriteSettings"
@@ -142,11 +142,8 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_Parquet_2_staging",
-						"type": "DatasetReference",
-						"parameters": {
-							"filename": "Seattle_Pet_Licenses_20241007 (1).parquet"
-						}
+						"referenceName": "ds_read_parquets",
+						"type": "DatasetReference"
 					}
 				]
 			},
