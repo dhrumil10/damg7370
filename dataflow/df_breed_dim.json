@@ -49,6 +49,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: true,",
 				"     inferDriftedColumnTypes: true,",
+				"     limit: 100,",
 				"     ignoreNoFilesFound: true,",
 				"     format: 'parquet') ~> oppar",
 				"source(output(",
