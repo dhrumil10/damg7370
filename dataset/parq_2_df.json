@@ -13,7 +13,7 @@
 				"fileName": "dim_breed_skt",
 				"container": "silvercontainer"
 			},
-			"compressionCodec": "none"
+			"compressionCodec": "snappy"
 		},
 		"schema": [
 			{
