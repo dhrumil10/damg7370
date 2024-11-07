@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "SnowflakeTable1",
+						"referenceName": "SnowflakeTablesink",
 						"type": "DatasetReference"
 					},
 					"name": "sinkoplocation",

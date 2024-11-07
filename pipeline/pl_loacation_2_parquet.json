@@ -138,8 +138,6 @@
 			{
 				"name": "copy_parquet_2_location",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Data flow1",
