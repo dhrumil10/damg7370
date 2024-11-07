@@ -7,7 +7,8 @@
 		},
 		"parameters": {
 			"file_name": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "dim_breed_skt"
 			}
 		},
 		"annotations": [],
@@ -15,7 +16,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "dim_breed_skt",
+				"fileName": {
+					"value": "@dataset().file_name",
+					"type": "Expression"
+				},
 				"container": "silvercontainer"
 			},
 			"compressionCodec": "snappy"
