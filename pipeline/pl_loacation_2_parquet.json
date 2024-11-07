@@ -197,7 +197,14 @@
 							"type": "SnowflakeImportCopyCommand"
 						}
 					},
-					"enableStaging": false,
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "ls_blob_storage",
+							"type": "LinkedServiceReference"
+						},
+						"path": "silvercontainer"
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -272,7 +279,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SnowflakeTable1",
+						"referenceName": "ds_snowflake_location",
 						"type": "DatasetReference"
 					}
 				]
