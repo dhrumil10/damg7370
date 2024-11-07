@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ds_snowflaje_stg",
+						"referenceName": "ds_Parquet_2_staging",
 						"type": "DatasetReference"
 					},
 					"name": "sorcesnowflakestage"
@@ -48,20 +48,11 @@
 				"parameters{",
 				"     DI_JOB_ID as string (\"59\")",
 				"}",
-				"source(output(",
-				"          LICENSE_ISSUE_DATE as string,",
-				"          LICENSE_NUMBER as string,",
-				"          ANIMAL_NAME as string,",
-				"          SPECIES as string,",
-				"          PRIMARY_BREED as string,",
-				"          SECONDARY_BREED as string,",
-				"          ZIP_CODE as string,",
-				"          DI_CREATED_DATE as string,",
-				"          DI_JOB_ID as string",
-				"     ),",
-				"     allowSchemaDrift: false,",
-				"     validateSchema: false,",
-				"     format: 'table') ~> sorcesnowflakestage",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     inferDriftedColumnTypes: true,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> sorcesnowflakestage",
 				"source(output(",
 				"          MAXBREEDSK as decimal(10,0)",
 				"     ),",
