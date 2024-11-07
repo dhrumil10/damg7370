@@ -31,6 +31,9 @@
 			"transformations": [
 				{
 					"name": "sourcedatawithsk"
+				},
+				{
+					"name": "aggregate1"
 				}
 			],
 			"scriptLines": [
@@ -65,7 +68,11 @@
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> sourcedatawithsk",
-				"sourcedatawithsk sink(allowSchemaDrift: true,",
+				"sourcedatawithsk aggregate(groupBy(Primary_Breed,",
+				"          Species,",
+				"          Secondary_Breed,",
+				"          MAXBREEDSK)) ~> aggregate1",
+				"aggregate1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          BREED_SK as string,",
