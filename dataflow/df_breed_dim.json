@@ -99,10 +99,19 @@
 				"     insertable:true,",
 				"     updateable:false,",
 				"     upsertable:false,",
+				"     truncate:true,",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     stageInsert: true) ~> outputsinkbreed"
+				"     stageInsert: true,",
+				"     mapColumn(",
+				"          BREED_SK,",
+				"          PRIMARY_BREED_NAME = Primary_Breed,",
+				"          SECONDARY_BREED_NAME = Secondary_Breed,",
+				"          SPECIES_NAME = Species,",
+				"          DI_JOB_ID,",
+				"          DI_CREATED_DT",
+				"     )) ~> outputsinkbreed"
 			]
 		}
 	}
