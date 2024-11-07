@@ -5,6 +5,12 @@
 			"referenceName": "ls_location",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"filename": {
+				"type": "string",
+				"defaultValue": "Seattle_Pet_Licenses_20241007 (1).tsv"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
