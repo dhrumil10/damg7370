@@ -5,11 +5,11 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"linkedService": {
-						"referenceName": "ls_blob_storage",
-						"type": "LinkedServiceReference"
+					"dataset": {
+						"referenceName": "parq_2_df",
+						"type": "DatasetReference"
 					},
-					"name": "sorcesnowflakestage"
+					"name": "oppar"
 				},
 				{
 					"dataset": {
@@ -48,13 +48,20 @@
 				"parameters{",
 				"     DI_JOB_ID as string (\"59\")",
 				"}",
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          License_Issue_Date as string,",
+				"          License_Number as string,",
+				"          Animal_Name as string,",
+				"          Species as string,",
+				"          Primary_Breed as string,",
+				"          Secondary_Breed as string,",
+				"          ZIPCode as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: true,",
-				"     format: 'parquet',",
-				"     container: 'silvercontainer',",
-				"     fileName: 'dim_breed_skt') ~> sorcesnowflakestage",
+				"     format: 'parquet') ~> oppar",
 				"source(output(",
 				"          MAXBREEDSK as decimal(10,0)",
 				"     ),",
@@ -62,7 +69,7 @@
 				"     validateSchema: false,",
 				"     query: 'select NVL(MAX(BREED_SK),0) as MaxBreedSK from BREED_DIM',",
 				"     format: 'query') ~> sourcebreeddim",
-				"sorcesnowflakestage, sourcebreeddim join(1==1,",
+				"oppar, sourcebreeddim join(1==1,",
 				"     joinType:'cross',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
