@@ -2,7 +2,7 @@
 	"name": "ds_location",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_location",
+			"referenceName": "ls_blob_storage",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -15,12 +15,12 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
+				"type": "AzureBlobStorageLocation",
 				"fileName": {
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"fileSystem": "rawcontainer"
+				"container": "rawcontainer"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
