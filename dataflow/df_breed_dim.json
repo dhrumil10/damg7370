@@ -34,6 +34,9 @@
 				},
 				{
 					"name": "aggregate1"
+				},
+				{
+					"name": "surrogateKey1"
 				}
 			],
 			"scriptLines": [
@@ -73,7 +76,10 @@
 				"          Secondary_Breed,",
 				"          MAXBREEDSK),",
 				"     COUNT_ROW = count(License_Number)) ~> aggregate1",
-				"aggregate1 sink(allowSchemaDrift: true,",
+				"aggregate1 keyGenerate(output(RowNum as long),",
+				"     startAt: 1L,",
+				"     stepValue: 1L) ~> surrogateKey1",
+				"surrogateKey1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          BREED_SK as string,",
