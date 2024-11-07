@@ -143,14 +143,9 @@
 			{
 				"name": "parquet2sstagetable",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "df_breed_load",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.01:00:00",
 					"retry": 0,
@@ -337,11 +332,6 @@
 							"DI_JOB_ID": {
 								"value": "'@{pipeline().RunId}'",
 								"type": "Expression"
-							}
-						},
-						"datasetParameters": {
-							"oppar": {
-								"file_name": "dim_breed_skt"
 							}
 						}
 					},
