@@ -21,11 +21,11 @@
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "SnowflakeTable1",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "ls_blob_storage",
+						"type": "LinkedServiceReference"
 					},
-					"name": "sink1"
+					"name": "sinkdimlocation"
 				}
 			],
 			"transformations": [
@@ -53,7 +53,7 @@
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> inputsource",
 				"source(output(",
-				"          LOCATION_SK as integer",
+				"          LOCATION_SK as decimal(10,0)",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -66,22 +66,12 @@
 				"     stepValue: 1L) ~> surrogateKey1",
 				"surrogateKey1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          LOCATION_SK as string,",
-				"          ZIP as string,",
-				"          CITY as string,",
-				"          STATE as string,",
-				"          DI_JOB_ID as string,",
-				"          DI_CREATED_DT as string",
-				"     ),",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     format: 'table',",
+				"     format: 'parquet',",
+				"     container: 'silvercontainer',",
+				"     partitionFileNames:['dim_location_skt'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     stageInsert: true) ~> sink1"
+				"     partitionBy('hash', 1)) ~> sinkdimlocation"
 			]
 		}
 	}
