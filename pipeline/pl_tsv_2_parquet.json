@@ -136,7 +136,7 @@
 						"referenceName": "ds_stgseattle",
 						"type": "DatasetReference",
 						"parameters": {
-							"FileName": "Seattle_Pet_Licenses_20241007 (1).parquet"
+							"FileName": "Seattle_Pet_Licenses_20241007 (1).tsv"
 						}
 					}
 				],
