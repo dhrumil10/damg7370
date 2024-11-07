@@ -63,6 +63,7 @@
 				"     joinType:'cross',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
+				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> sourcedatawithsk",
 				"sourcedatawithsk sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
