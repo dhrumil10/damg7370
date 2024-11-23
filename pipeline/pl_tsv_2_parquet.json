@@ -143,9 +143,14 @@
 			{
 				"name": "parquet2sstagetable",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "copy_2_silver_as_parquet",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.01:00:00",
 					"retry": 0,
@@ -310,7 +315,7 @@
 				"type": "ExecuteDataFlow",
 				"dependsOn": [
 					{
-						"activity": "copy_2_silver_as_parquet",
+						"activity": "parquet2sstagetable",
 						"dependencyConditions": [
 							"Succeeded"
 						]
