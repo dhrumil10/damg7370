@@ -19,7 +19,7 @@
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"container": "silvercontainer"
+				"container": "snowstagging"
 			},
 			"compressionCodec": "snappy"
 		},
