@@ -160,7 +160,7 @@
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "ls_blob_storage",
+							"referenceName": "linkedService3",
 							"type": "LinkedServiceReference"
 						},
 						"path": "snowstagging"
