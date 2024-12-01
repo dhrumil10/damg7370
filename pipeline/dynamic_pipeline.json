@@ -143,7 +143,7 @@
 					"source": {
 						"type": "ParquetSource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
+							"type": "AzureBlobFSReadSettings",
 							"fileListPath": "snowstagging/inventory.parquet",
 							"enablePartitionDiscovery": false
 						},
