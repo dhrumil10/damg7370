@@ -75,7 +75,15 @@
 								"sink": {
 									"type": "ParquetSink",
 									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
+										"type": "AzureBlobStorageWriteSettings",
+										"metadata": [
+											{
+												"value": ""
+											},
+											{
+												"value": ""
+											}
+										]
 									},
 									"formatSettings": {
 										"type": "ParquetWriteSettings"
@@ -186,7 +194,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "load_to_parquet",
+									"referenceName": "Parquet2form",
 									"type": "DatasetReference"
 								}
 							]
