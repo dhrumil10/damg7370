@@ -2,15 +2,15 @@
 	"name": "Parquet1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "ls_blob_storage",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"container": "snowstagging"
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "snowstagging"
 			},
 			"compressionCodec": "snappy"
 		},
