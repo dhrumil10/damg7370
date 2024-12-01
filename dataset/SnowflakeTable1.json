@@ -128,8 +128,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "INFORMATION_SCHEMA",
-			"table": "TABLES"
+			"schema": "STAGE",
+			"table": "ACTOR"
 		}
 	}
 }
