@@ -157,7 +157,7 @@
 							"type": "SnowflakeImportCopyCommand"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": true
 				},
 				"inputs": [
 					{
