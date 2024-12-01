@@ -195,7 +195,13 @@
 							"outputs": [
 								{
 									"referenceName": "Parquet2form",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"filename": {
+											"value": "@concat(\n    item().table_name, '.parquet'\n)",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
