@@ -34,6 +34,38 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "ForEachtable",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lookup_table_names",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"batchCount": 10,
+					"activities": [
+						{
+							"name": "Set TableName",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "",
+								"value": ""
+							}
+						}
+					]
+				}
 			}
 		],
 		"parameters": {
