@@ -64,7 +64,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "Table_name",
+								"variableName": "Tablename",
 								"value": {
 									"value": "@item()",
 									"type": "Expression"
@@ -86,7 +86,7 @@
 			}
 		},
 		"variables": {
-			"Table_name": {
+			"Tablename": {
 				"type": "String"
 			}
 		},
