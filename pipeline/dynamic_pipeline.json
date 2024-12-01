@@ -49,7 +49,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup_table_names').output.value",
+						"value": "@activity('Lookup_table_names').output.value\n\n",
 						"type": "Expression"
 					},
 					"batchCount": 10,
@@ -66,7 +66,7 @@
 							"typeProperties": {
 								"variableName": "Tablename",
 								"value": {
-									"value": "@item()",
+									"value": "@item().table_name",
 									"type": "Expression"
 								}
 							}
