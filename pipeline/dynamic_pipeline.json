@@ -17,13 +17,20 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select name as table_name from sys.tables \r\nwhere type = 'U';",
+						"sqlReaderQuery": {
+							"value": "select name as table_name \nfrom sys.tables\nwhere type='U';",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
 						"referenceName": "AzureSqlDB_Demo_DP",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"schema_name": "dbo",
+							"table_name": "customer"
+						}
 					},
 					"firstRowOnly": false
 				}
