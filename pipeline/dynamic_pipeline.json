@@ -60,8 +60,11 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "",
-								"value": ""
+								"variableName": "Table_name",
+								"value": {
+									"value": "@item()",
+									"type": "Expression"
+								}
 							}
 						}
 					]
@@ -76,6 +79,11 @@
 			"tname": {
 				"type": "string",
 				"defaultValue": "customer"
+			}
+		},
+		"variables": {
+			"Table_name": {
+				"type": "String"
 			}
 		},
 		"annotations": []
