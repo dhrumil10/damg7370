@@ -144,7 +144,7 @@
 						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"recursive": false,
+							"fileListPath": "snowstagging",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -163,52 +163,7 @@
 							"referenceName": "linkedService3",
 							"type": "LinkedServiceReference"
 						},
-						"path": "snowstagging"
-					},
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "actor_id",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "ACTOR_ID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "first_name",
-									"type": "String"
-								},
-								"sink": {
-									"name": "FIRST_NAME",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "last_name",
-									"type": "String"
-								},
-								"sink": {
-									"name": "LAST_NAME",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "last_update",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "LAST_UPDATE",
-									"type": "DateTime"
-								}
-							}
-						]
+						"path": ""
 					}
 				},
 				"inputs": [
