@@ -160,7 +160,7 @@
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "AzureBlobStorage1",
+							"referenceName": "ls_blob_storage",
 							"type": "LinkedServiceReference"
 						},
 						"path": "snowstagging"
