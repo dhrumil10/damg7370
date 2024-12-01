@@ -141,9 +141,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "SnowflakeV2Source",
-						"exportSettings": {
-							"type": "SnowflakeExportCopyCommand"
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"fileListPath": "snowstagging/inventory.parquet",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "ParquetReadSettings"
 						}
 					},
 					"sink": {
@@ -156,7 +161,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SnowflakeTable1",
+						"referenceName": "Parquet_to_form",
 						"type": "DatasetReference"
 					}
 				],
