@@ -75,15 +75,7 @@
 								"sink": {
 									"type": "ParquetSink",
 									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings",
-										"metadata": [
-											{
-												"value": ""
-											},
-											{
-												"value": ""
-											}
-										]
+										"type": "AzureBlobStorageWriteSettings"
 									},
 									"formatSettings": {
 										"type": "ParquetWriteSettings"
