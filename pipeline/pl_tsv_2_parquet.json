@@ -143,8 +143,6 @@
 			{
 				"name": "parquet2sstagetable",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.01:00:00",
