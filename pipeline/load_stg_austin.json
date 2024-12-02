@@ -48,7 +48,10 @@
 				"inputs": [
 					{
 						"referenceName": "austin_source_data",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Filename": "Austin_Crash_Report_Data_-_Crash_Level_Records_20241129.tsv"
+						}
 					}
 				],
 				"outputs": [
