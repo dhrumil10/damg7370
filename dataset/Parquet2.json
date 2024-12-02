@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "actor.parquet",
 				"fileSystem": "snowstagging"
 			},
 			"compressionCodec": "snappy"
