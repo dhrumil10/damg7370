@@ -10,13 +10,17 @@
 						"type": "DatasetReference"
 					},
 					"name": "source"
-				},
-				{
-					"name": "source1"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "select1"
+				},
+				{
+					"name": "exists1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          ID as string,",
@@ -67,8 +71,56 @@
 				"     validateSchema: true,",
 				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: false) ~> source",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1"
+				"source select(mapColumn(",
+				"          ID,",
+				"          {Crash ID},",
+				"          crash_fatal_fl,",
+				"          case_id,",
+				"          {Primary address},",
+				"          {Secondary address},",
+				"          rpt_block_num,",
+				"          rpt_street_name,",
+				"          rpt_street_sfx,",
+				"          crash_speed_limit,",
+				"          road_constr_zone_fl,",
+				"          latitude,",
+				"          longitude,",
+				"          crash_sev_id,",
+				"          sus_serious_injry_cnt,",
+				"          nonincap_injry_cnt,",
+				"          poss_injry_cnt,",
+				"          non_injry_cnt,",
+				"          unkn_injry_cnt,",
+				"          tot_injry_cnt,",
+				"          death_cnt,",
+				"          units_involved,",
+				"          point,",
+				"          motor_vehicle_death_count,",
+				"          motor_vehicle_serious_injury_count,",
+				"          bicycle_death_count,",
+				"          bicycle_serious_injury_count,",
+				"          pedestrian_death_count,",
+				"          pedestrian_serious_injury_count,",
+				"          motorcycle_death_count,",
+				"          motorcycle_serious_injury_count,",
+				"          other_death_count,",
+				"          other_serious_injury_count,",
+				"          onsys_fl,",
+				"          private_dr_fl,",
+				"          micromobility_serious_injury_count,",
+				"          micromobility_death_count,",
+				"          {Crash timestamp (US/Central)},",
+				"          {Crash timestamp},",
+				"          {Is deleted},",
+				"          {Is temporary record},",
+				"          {Law enforcement fatality count},",
+				"          {Reported street prefix}",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 exists(ID == ERROR_FUNCTION(''),",
+				"     negate:false,",
+				"     broadcast: 'auto')~> exists1"
 			]
 		}
 	}
