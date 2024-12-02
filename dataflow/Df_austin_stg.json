@@ -10,6 +10,9 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
+				},
+				{
+					"name": "source2"
 				}
 			],
 			"sinks": [
@@ -81,6 +84,8 @@
 				"     limit: 100000,",
 				"     ignoreNoFilesFound: true,",
 				"     format: 'parquet') ~> source1",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source2",
 				"source1 derive(Crash_timestamp_US_Central = toTimestamp(Crash_timestamp_US_Central, 'MM/dd/yyyy hh:mm:ss a', 'en-US'),",
 				"          Crash_timestamp = toDate(Crash_timestamp, 'MM/dd/yyyy'),",
 				"          latitude = iif(isNull(latitude) || latitude == '', '0', trim(latitude)),",
