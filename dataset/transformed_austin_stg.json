@@ -1,0 +1,19 @@
+{
+	"name": "transformed_austin_stg",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blob_storage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "silver-final-project-container"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

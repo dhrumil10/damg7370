@@ -14,7 +14,11 @@
 			],
 			"sinks": [
 				{
-					"name": "sink1"
+					"dataset": {
+						"referenceName": "transformed_austin_stg",
+						"type": "DatasetReference"
+					},
+					"name": "transformedaustinstg"
 				}
 			],
 			"transformations": [
@@ -79,11 +83,9 @@
 				"     format: 'parquet') ~> source1",
 				"source1 derive(Crash_timestamp_US_Central = toTimestamp(Crash_timestamp_US_Central, 'MM/dd/yyyy hh:mm:ss a', 'en-US'),",
 				"          Crash_timestamp = toDate(Crash_timestamp, 'MM/dd/yyyy'),",
-				"          latitude = iif(isNull(latitude) || latitude == '', '0', trim(latitude))\r",
-				",",
+				"          latitude = iif(isNull(latitude) || latitude == '', '0', trim(latitude)),",
 				"          longitude = iif(isNull(longitude) || longitude == '', '0', trim(longitude)),",
-				"          Street_name = \r",
-				"case(\r",
+				"          Street_name = case(\r",
 				"    (isNull(Primary_address) || Primary_address == '' || Primary_address == 'null') && (isNull(Secondary_address) || Secondary_address == ''), 'UNKNOWN',\r",
 				"    instr(Secondary_address, 'UNKNOWN') > 0 || isNull(Secondary_address) || Secondary_address == '', 'UNKNOWN',\r",
 				"    isNull(Primary_address) || Primary_address == '' || Primary_address == '0' || Primary_address == 'null', upper(trim(Secondary_address)),\r",
@@ -118,7 +120,8 @@
 				"),",
 				"          units_involved = iif(isNull(units_involved) || units_involved == '', 'nan', upper(units_involved)),",
 				"          bycycle_fatal_count = iif(    toInteger(bicycle_death_count) == 1 ||     toInteger(bicycle_serious_injury_count) == 1 ||     (!isNull(bicycle_death_count) && bicycle_serious_injury_count == 'Y'),     1,     0),",
-				"          other_fatal_count = iif(    toInteger(other_death_count) == 1 ||     toInteger(other_serious_injury_count) == 1 ||     (!isNull(other_death_count) && other_serious_injury_count == 'Y'),     1,     0)) ~> derivedColumn1",
+				"          other_fatal_count = iif(    toInteger(other_death_count) == 1 ||     toInteger(other_serious_injury_count) == 1 ||     (!isNull(other_death_count) && other_serious_injury_count == 'Y'),     1,     0),",
+				"          Crash_ID = 'Autin_ID_'+Crash_ID) ~> derivedColumn1",
 				"derivedColumn1 select(mapColumn(",
 				"          ID,",
 				"          Crash_ID,",
@@ -161,8 +164,9 @@
 				"     skipDuplicateMapOutputs: true) ~> select1",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     format: 'parquet',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true) ~> transformedaustinstg"
 			]
 		}
 	}
