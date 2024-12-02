@@ -148,7 +148,17 @@
 										"type": "SnowflakeImportCopyCommand"
 									}
 								},
-								"enableStaging": false
+								"enableStaging": {
+									"value": "@item().table_name",
+									"type": "Expression"
+								},
+								"stagingSettings": {
+									"linkedServiceName": {
+										"referenceName": "linkedService3",
+										"type": "LinkedServiceReference"
+									},
+									"path": ""
+								}
 							},
 							"inputs": [
 								{
