@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "austin_source_data",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "austin_deliminated",
