@@ -12,7 +12,11 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "derivedColumn1"
@@ -100,7 +104,7 @@
 				"    1, \r",
 				"    0\r",
 				"),",
-				"          motot_fatal_count = iif(\r",
+				"          motor_vehicle_fatal_count = iif(\r",
 				"    toInteger(motor_vehicle_death_count) == 1 || \r",
 				"    toInteger(motor_vehicle_serious_injury_count) == 1 || \r",
 				"    (!isNull(motor_vehicle_death_count) && motor_vehicle_serious_injury_count == 'Y'), \r",
@@ -111,14 +115,16 @@
 				"    road_constr_zone_fl == 'true' && toInteger(crash_speed_limit) > 55, 'over speeding',\r",
 				"    road_constr_zone_fl == 'true', 'Road_construction zone',\r",
 				"    'unknown'\r",
-				")) ~> derivedColumn1",
+				"),",
+				"          units_involved = iif(isNull(units_involved) || units_involved == '', 'nan', upper(units_involved)),",
+				"          bycycle_fatal_count = iif(    toInteger(bicycle_death_count) == 1 ||     toInteger(bicycle_serious_injury_count) == 1 ||     (!isNull(bicycle_death_count) && bicycle_serious_injury_count == 'Y'),     1,     0),",
+				"          other_fatal_count = iif(    toInteger(other_death_count) == 1 ||     toInteger(other_serious_injury_count) == 1 ||     (!isNull(other_death_count) && other_serious_injury_count == 'Y'),     1,     0)) ~> derivedColumn1",
 				"derivedColumn1 select(mapColumn(",
 				"          ID,",
 				"          Crash_ID,",
 				"          crash_fatal_fl,",
 				"          case_id,",
-				"          Primary_address,",
-				"          Secondary_address,",
+				"          Primary_address = Street_name,",
 				"          rpt_block_num,",
 				"          rpt_street_name,",
 				"          rpt_street_sfx,",
@@ -136,16 +142,10 @@
 				"          death_cnt,",
 				"          units_involved,",
 				"          point,",
-				"          motor_vehicle_death_count,",
-				"          motor_vehicle_serious_injury_count,",
-				"          bicycle_death_count,",
-				"          bicycle_serious_injury_count,",
-				"          pedestrian_death_count = pedestrian_fatal_count,",
-				"          pedestrian_serious_injury_count = pedestrian_fatal_count,",
-				"          motorcycle_death_count,",
-				"          motorcycle_serious_injury_count,",
-				"          other_death_count,",
-				"          other_serious_injury_count,",
+				"          motor_vehicle_fatal_injr_count = motor_vehicle_fatal_count,",
+				"          bicycle_fatal_injr_count = motor_cycle_fatal_count,",
+				"          pedestrian_fatal_injury_count = pedestrian_fatal_count,",
+				"          other_fatal_injr_count = other_fatal_count,",
 				"          onsys_fl,",
 				"          private_dr_fl,",
 				"          micromobility_serious_injury_count,",
@@ -158,7 +158,11 @@
 				"          Reported_street_prefix",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
