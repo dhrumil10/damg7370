@@ -144,7 +144,7 @@
 						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"fileListPath": "snowstagging/actor.parquet",
+							"fileListPath": "snowstagging",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
