@@ -487,7 +487,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash timestamp_US_Central",
+									"name": "Crash_timestamp_US_Central",
 									"physicalType": "UTF8"
 								}
 							},
@@ -498,8 +498,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash timestamp",
-									"type": "String",
+									"name": "Crash_timestamp",
 									"physicalType": "UTF8"
 								}
 							},
@@ -510,8 +509,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Is deleted",
-									"type": "String",
+									"name": "Is_deleted",
 									"physicalType": "UTF8"
 								}
 							},
@@ -522,8 +520,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Is temporary record",
-									"type": "String",
+									"name": "Is_temporary_record",
 									"physicalType": "UTF8"
 								}
 							},
