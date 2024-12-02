@@ -487,8 +487,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash timestamp (US/Central)",
-									"type": "String",
+									"name": "Crash timestamp_US_Central",
 									"physicalType": "UTF8"
 								}
 							},
@@ -535,8 +534,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Law enforcement fatality count",
-									"type": "String",
+									"name": "Law_enforcement_fatality_count",
 									"physicalType": "UTF8"
 								}
 							},
@@ -547,8 +545,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Reported street prefix",
-									"type": "String",
+									"name": "Reported_street_prefix",
 									"physicalType": "UTF8"
 								}
 							}
