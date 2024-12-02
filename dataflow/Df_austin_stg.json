@@ -5,9 +5,9 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "Autin_stg_parquet",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "ls_blob_storage",
+						"type": "LinkedServiceReference"
 					},
 					"name": "source1"
 				}
@@ -18,8 +18,11 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: true,",
 				"     inferDriftedColumnTypes: true,",
-				"     ignoreNoFilesFound: false,",
-				"     format: 'parquet') ~> source1"
+				"     limit: 100000,",
+				"     ignoreNoFilesFound: true,",
+				"     format: 'parquet',",
+				"     container: 'bronze-final-project-container',",
+				"     fileName: 'Austin_Crash_Report_Data_-_Crash_Level_Records_20241129.parquet') ~> source1"
 			]
 		}
 	}
