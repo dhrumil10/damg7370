@@ -34,10 +34,6 @@
 				"name": "DI_CREATED_DT",
 				"type": "TIMESTAMP_TZ"
 			}
-		],
-		"typeProperties": {
-			"schema": "STAGING",
-			"table": "LOCATION_DIM"
-		}
+		]
 	}
 }
