@@ -40,9 +40,6 @@
 				},
 				{
 					"name": "aggregatemaxcrashid"
-				},
-				{
-					"name": "derivedColumn3"
 				}
 			],
 			"scriptLines": [
@@ -185,7 +182,6 @@
 				"     skipDuplicateMapOutputs: true) ~> select1",
 				"aggregatemaxcrashid derive() ~> derivedColumn2",
 				"derivedColumn1 aggregate(max_crash_id = max(Crash_ID)) ~> aggregatemaxcrashid",
-				"source2 derive() ~> derivedColumn3",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
