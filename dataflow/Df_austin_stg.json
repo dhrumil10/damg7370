@@ -10,13 +10,6 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
-				},
-				{
-					"dataset": {
-						"referenceName": "austin_source_data",
-						"type": "DatasetReference"
-					},
-					"name": "source2"
 				}
 			],
 			"sinks": [
@@ -34,12 +27,6 @@
 				},
 				{
 					"name": "select1"
-				},
-				{
-					"name": "aggregate1"
-				},
-				{
-					"name": "union1"
 				}
 			],
 			"scriptLines": [
@@ -94,56 +81,7 @@
 				"     limit: 100000,",
 				"     ignoreNoFilesFound: true,",
 				"     format: 'parquet') ~> source1",
-				"source(output(",
-				"          ID as string,",
-				"          {Crash ID} as string,",
-				"          crash_fatal_fl as string,",
-				"          case_id as string,",
-				"          {Primary address} as string,",
-				"          {Secondary address} as string,",
-				"          rpt_block_num as string,",
-				"          rpt_street_name as string,",
-				"          rpt_street_sfx as string,",
-				"          crash_speed_limit as string,",
-				"          road_constr_zone_fl as string,",
-				"          latitude as string,",
-				"          longitude as string,",
-				"          crash_sev_id as string,",
-				"          sus_serious_injry_cnt as string,",
-				"          nonincap_injry_cnt as string,",
-				"          poss_injry_cnt as string,",
-				"          non_injry_cnt as string,",
-				"          unkn_injry_cnt as string,",
-				"          tot_injry_cnt as string,",
-				"          death_cnt as string,",
-				"          units_involved as string,",
-				"          point as string,",
-				"          motor_vehicle_death_count as string,",
-				"          motor_vehicle_serious_injury_count as string,",
-				"          bicycle_death_count as string,",
-				"          bicycle_serious_injury_count as string,",
-				"          pedestrian_death_count as string,",
-				"          pedestrian_serious_injury_count as string,",
-				"          motorcycle_death_count as string,",
-				"          motorcycle_serious_injury_count as string,",
-				"          other_death_count as string,",
-				"          other_serious_injury_count as string,",
-				"          onsys_fl as string,",
-				"          private_dr_fl as string,",
-				"          micromobility_serious_injury_count as string,",
-				"          micromobility_death_count as string,",
-				"          {Crash timestamp (US/Central)} as string,",
-				"          {Crash timestamp} as string,",
-				"          {Is deleted} as string,",
-				"          {Is temporary record} as string,",
-				"          {Law enforcement fatality count} as string,",
-				"          {Reported street prefix} as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: true,",
-				"     inferDriftedColumnTypes: true,",
-				"     ignoreNoFilesFound: true) ~> source2",
-				"union1 derive(Crash_timestamp_US_Central = toTimestamp(Crash_timestamp_US_Central, 'MM/dd/yyyy hh:mm:ss a', 'en-US'),",
+				"source1 derive(Crash_timestamp_US_Central = toTimestamp(Crash_timestamp_US_Central, 'MM/dd/yyyy hh:mm:ss a', 'en-US'),",
 				"          Crash_timestamp = toDate(Crash_timestamp, 'MM/dd/yyyy'),",
 				"          latitude = iif(isNull(latitude) || latitude == '', '0', trim(latitude)),",
 				"          longitude = iif(isNull(longitude) || longitude == '', '0', trim(longitude)),",
@@ -183,7 +121,7 @@
 				"          units_involved = iif(isNull(units_involved) || units_involved == '', 'nan', upper(units_involved)),",
 				"          bycycle_fatal_count = iif(    toInteger(bicycle_death_count) == 1 ||     toInteger(bicycle_serious_injury_count) == 1 ||     (!isNull(bicycle_death_count) && bicycle_serious_injury_count == 'Y'),     1,     0),",
 				"          other_fatal_count = iif(    toInteger(other_death_count) == 1 ||     toInteger(other_serious_injury_count) == 1 ||     (!isNull(other_death_count) && other_serious_injury_count == 'Y'),     1,     0),",
-				"          Crash_ID = iif(isNull(Crash_ID)|| Crash_ID == '', max_crash_id + 1, toInteger(Crash_ID)),",
+				"          Crash_ID = 'Austin_'+ID,",
 				"          micromobility_fatal_count = iif(    toInteger(micromobility_death_count) == 1 ||     toInteger(micromobility_serious_injury_count) == 1 ||     (!isNull(micromobility_death_count) && micromobility_serious_injury_count == 'Y'),     1,     0)) ~> derivedColumn1",
 				"derivedColumn1 select(mapColumn(",
 				"          ID,",
@@ -224,8 +162,6 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
-				"source2 aggregate(max_crash_id = max(toInteger({Crash ID}))) ~> aggregate1",
-				"source1, aggregate1 union(byName: true)~> union1",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
