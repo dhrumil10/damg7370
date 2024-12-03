@@ -10,6 +10,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "Austin_source_to_parquet",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
 				}
 			],
 			"sinks": [
@@ -27,6 +34,15 @@
 				},
 				{
 					"name": "select1"
+				},
+				{
+					"name": "derivedColumn2"
+				},
+				{
+					"name": "aggregatemaxcrashid"
+				},
+				{
+					"name": "derivedColumn3"
 				}
 			],
 			"scriptLines": [
@@ -81,6 +97,11 @@
 				"     limit: 100000,",
 				"     ignoreNoFilesFound: true,",
 				"     format: 'parquet') ~> source1",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     inferDriftedColumnTypes: true,",
+				"     ignoreNoFilesFound: true,",
+				"     format: 'parquet') ~> source2",
 				"source1 derive(Crash_timestamp_US_Central = toTimestamp(Crash_timestamp_US_Central, 'MM/dd/yyyy hh:mm:ss a', 'en-US'),",
 				"          Crash_timestamp = toDate(Crash_timestamp, 'MM/dd/yyyy'),",
 				"          latitude = iif(isNull(latitude) || latitude == '', '0', trim(latitude)),",
@@ -121,10 +142,10 @@
 				"          units_involved = iif(isNull(units_involved) || units_involved == '', 'nan', upper(units_involved)),",
 				"          bycycle_fatal_count = iif(    toInteger(bicycle_death_count) == 1 ||     toInteger(bicycle_serious_injury_count) == 1 ||     (!isNull(bicycle_death_count) && bicycle_serious_injury_count == 'Y'),     1,     0),",
 				"          other_fatal_count = iif(    toInteger(other_death_count) == 1 ||     toInteger(other_serious_injury_count) == 1 ||     (!isNull(other_death_count) && other_serious_injury_count == 'Y'),     1,     0),",
-				"          Crash_ID = 'Autin_ID_'+Crash_ID) ~> derivedColumn1",
-				"derivedColumn1 select(mapColumn(",
+				"          Crash_ID = ERROR_FUNCTION('')) ~> derivedColumn1",
+				"derivedColumn2 select(mapColumn(",
 				"          ID,",
-				"          Crash_ID,",
+				"          Crash_ID = max_Crash_ID,",
 				"          crash_fatal_fl,",
 				"          case_id,",
 				"          Primary_address = Street_name,",
@@ -162,6 +183,9 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
+				"aggregatemaxcrashid derive() ~> derivedColumn2",
+				"derivedColumn1 aggregate(max_crash_id = max(Crash_ID)) ~> aggregatemaxcrashid",
+				"source2 derive() ~> derivedColumn3",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
