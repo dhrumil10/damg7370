@@ -121,7 +121,7 @@
 				"          units_involved = iif(isNull(units_involved) || units_involved == '', 'nan', upper(units_involved)),",
 				"          bycycle_fatal_count = iif(    toInteger(bicycle_death_count) == 1 ||     toInteger(bicycle_serious_injury_count) == 1 ||     (!isNull(bicycle_death_count) && bicycle_serious_injury_count == 'Y'),     1,     0),",
 				"          other_fatal_count = iif(    toInteger(other_death_count) == 1 ||     toInteger(other_serious_injury_count) == 1 ||     (!isNull(other_death_count) && other_serious_injury_count == 'Y'),     1,     0),",
-				"          Crash_ID = 'Austin_'+ID,",
+				"          Crash_ID = 'Austin-'+ID,",
 				"          micromobility_fatal_count = iif(    toInteger(micromobility_death_count) == 1 ||     toInteger(micromobility_serious_injury_count) == 1 ||     (!isNull(micromobility_death_count) && micromobility_serious_injury_count == 'Y'),     1,     0)) ~> derivedColumn1",
 				"derivedColumn1 select(mapColumn(",
 				"          ID,",
