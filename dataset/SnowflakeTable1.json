@@ -36,8 +36,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "STAGING",
-			"table": "LOCATION_DIM"
+			"schema": "STAGGING",
+			"table": "STG__AUSTIN"
 		}
 	}
 }
