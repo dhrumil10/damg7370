@@ -604,6 +604,8 @@
 			{
 				"name": "parquet_df_to_snowflake",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Df_austin_stg",
@@ -642,7 +644,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "snowflake",
+						"referenceName": "dataset_load_stg_autin_in_snowflake",
 						"type": "DatasetReference"
 					}
 				],
