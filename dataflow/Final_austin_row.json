@@ -22,9 +22,6 @@
 				}
 			],
 			"scriptLines": [
-				"parameters{",
-				"     pid as string (@pipeline().RunId)",
-				"}",
 				"source(output(",
 				"          ID as string,",
 				"          Crash_ID as string,",
@@ -78,8 +75,8 @@
 				"source1 derive(Crash_ID = ID,",
 				"          Crash_timestamp_US_Central = toDate(Crash_timestamp_US_Central, 'MM/dd/yyyy', 'en-US'),",
 				"          Crash_timestamp = toTimestamp(Crash_timestamp_US_Central, 'MM/dd/yyyy HH:mm', 'EST', 'en-US'),",
-				"          created_dt = currentUTC(),",
-				"          pid = $pid) ~> derivedColumn1",
+				"          created_dt = toString(currentUTC()),",
+				"          pid = \"cdferff123djfDJRG32kf\") ~> derivedColumn1",
 				"derivedColumn1 select(mapColumn(",
 				"          ID,",
 				"          Crash_ID,",
