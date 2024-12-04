@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "STAGING",
-			"table": "STG_AUSTIN_RAW"
+			"table": "STG_AUSTIN_V2"
 		}
 	}
 }
