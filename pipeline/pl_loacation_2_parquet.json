@@ -20,11 +20,6 @@
 						"type": "DataFlowReference",
 						"parameters": {
 							"JObID": "\"1\""
-						},
-						"datasetParameters": {
-							"sourceslocation": {
-								"locationfileparquet": "geo-data.parquet"
-							}
 						}
 					},
 					"compute": {
