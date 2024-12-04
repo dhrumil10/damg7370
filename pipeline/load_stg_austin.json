@@ -1103,12 +1103,6 @@
 						"referenceName": "Final_austin_row",
 						"type": "DataFlowReference"
 					},
-					"staging": {
-						"linkedService": {
-							"referenceName": "ls_blob_storage",
-							"type": "LinkedServiceReference"
-						}
-					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
