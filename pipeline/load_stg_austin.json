@@ -737,16 +737,6 @@
 							},
 							{
 								"source": {
-									"name": "latitude",
-									"type": "String"
-								},
-								"sink": {
-									"name": "LATITUDE",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "crash_sev_id",
 									"type": "String"
 								},
