@@ -747,16 +747,6 @@
 							},
 							{
 								"source": {
-									"name": "longitude",
-									"type": "String"
-								},
-								"sink": {
-									"name": "LONGITUDE",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "crash_sev_id",
 									"type": "String"
 								},
@@ -1017,26 +1007,6 @@
 							},
 							{
 								"source": {
-									"name": "Is_deleted",
-									"type": "String"
-								},
-								"sink": {
-									"name": "IS_DELETED",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "Is_temporary_record",
-									"type": "String"
-								},
-								"sink": {
-									"name": "IS_TEMPORARY_RECORD",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
 									"name": "Law_enforcement_fatality_count",
 									"type": "String"
 								},
@@ -1072,6 +1042,36 @@
 								},
 								"sink": {
 									"name": "RPT_BLOCK_NUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "longitude",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LONGITUDE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Is_deleted",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IS_DELETED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Is_temporary_record",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IS_TEMPORARY_RECORD",
 									"type": "String"
 								}
 							}
