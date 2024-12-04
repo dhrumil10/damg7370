@@ -9,8 +9,8 @@
 		"type": "SnowflakeV2Table",
 		"schema": [],
 		"typeProperties": {
-			"schema": "STAGGING",
-			"table": "STG__AUSTIN"
+			"schema": "STAGING",
+			"table": "STG_AUSTIN_RAW"
 		}
 	}
 }
