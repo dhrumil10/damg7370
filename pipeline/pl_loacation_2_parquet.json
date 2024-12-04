@@ -3,151 +3,9 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "copy_2_parquet_location",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.01:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
-					},
-					"sink": {
-						"type": "ParquetSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "ParquetWriteSettings"
-						}
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "state_fips",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "state_fips",
-									"type": "String",
-									"physicalType": "UTF8"
-								}
-							},
-							{
-								"source": {
-									"name": "state",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "state",
-									"type": "String",
-									"physicalType": "UTF8"
-								}
-							},
-							{
-								"source": {
-									"name": "state_abbr",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "state_abbr",
-									"type": "String",
-									"physicalType": "UTF8"
-								}
-							},
-							{
-								"source": {
-									"name": "zipcode",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "zipcode",
-									"type": "String",
-									"physicalType": "UTF8"
-								}
-							},
-							{
-								"source": {
-									"name": "county",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "county",
-									"type": "String",
-									"physicalType": "UTF8"
-								}
-							},
-							{
-								"source": {
-									"name": "city",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "city",
-									"type": "String",
-									"physicalType": "UTF8"
-								}
-							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "ds_location",
-						"type": "DatasetReference",
-						"parameters": {
-							"filename": "geo-data.csv"
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "ds_source_location_2_parquet",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "Data flow1",
+				"name": "df_loation_dim",
 				"type": "ExecuteDataFlow",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "copy_2_parquet_location",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -157,6 +15,18 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"dataflow": {
+						"referenceName": "df_loation_dim",
+						"type": "DataFlowReference",
+						"parameters": {
+							"JObID": "\"1\""
+						},
+						"datasetParameters": {
+							"sourceslocation": {
+								"locationfileparquet": "geo-data.parquet"
+							}
+						}
+					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
