@@ -827,16 +827,6 @@
 							},
 							{
 								"source": {
-									"name": "units_involved",
-									"type": "String"
-								},
-								"sink": {
-									"name": "UNITS_INVOLVED",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "point",
 									"type": "String"
 								},
@@ -947,26 +937,6 @@
 							},
 							{
 								"source": {
-									"name": "onsys_fl",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ONSYS_FL",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "private_dr_fl",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PRIVATE_DR_FL",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
 									"name": "micromobility_serious_injury_count",
 									"type": "String"
 								},
@@ -1072,6 +1042,36 @@
 								},
 								"sink": {
 									"name": "IS_TEMPORARY_RECORD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "units_involved",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UNITS_INVOLVED",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "onsys_fl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ONSYS_FL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "private_dr_fl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRIVATE_DR_FL",
 									"type": "String"
 								}
 							}
