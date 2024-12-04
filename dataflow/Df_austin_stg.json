@@ -83,7 +83,6 @@
 				"     format: 'parquet') ~> source1",
 				"source1 derive(Crash_timestamp_US_Central = toTimestamp(Crash_timestamp_US_Central, 'MM/dd/yyyy hh:mm:ss a', 'en-US'),",
 				"          Crash_timestamp = toDate(Crash_timestamp, 'MM/dd/yyyy'),",
-				"          latitude = iif(isNull(latitude) || latitude == '', '0', trim(latitude)),",
 				"          Crash_ID = ID) ~> derivedColumn1",
 				"derivedColumn1 select(mapColumn(",
 				"          Crash_ID,",
