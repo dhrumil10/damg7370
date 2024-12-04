@@ -157,21 +157,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataflow": {
-						"referenceName": "dataflow_location",
-						"type": "DataFlowReference",
-						"parameters": {
-							"DI_CREATED_ID": {
-								"value": "@pipeline().parameters.jobid",
-								"type": "Expression"
-							}
-						},
-						"datasetParameters": {
-							"inputsource": {
-								"locationfileparquet": "geo-data.parquet"
-							}
-						}
-					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
