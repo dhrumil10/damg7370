@@ -42,7 +42,7 @@
 							{
 								"source": {
 									"name": "state_fips",
-									"type": "Int32",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -136,157 +136,10 @@
 				]
 			},
 			{
-				"name": "copy_parquet_2_location",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Data flow1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.01:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [
-					{
-						"name": "Source",
-						"value": "silvercontainer//geo-data.parquet"
-					},
-					{
-						"name": "Destination",
-						"value": "STAGING.LOCATION_DIM"
-					}
-				],
-				"typeProperties": {
-					"source": {
-						"type": "ParquetSource",
-						"additionalColumns": [
-							{
-								"name": "DI_CreatedID",
-								"value": {
-									"value": "@pipeline().RunId",
-									"type": "Expression"
-								}
-							},
-							{
-								"name": "DI_Created_dt",
-								"value": {
-									"value": "@utcNow()",
-									"type": "Expression"
-								}
-							}
-						],
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": false,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "ParquetReadSettings"
-						}
-					},
-					"sink": {
-						"type": "SnowflakeV2Sink",
-						"importSettings": {
-							"type": "SnowflakeImportCopyCommand"
-						}
-					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "ls_blob_storage",
-							"type": "LinkedServiceReference"
-						},
-						"path": "silvercontainer"
-					},
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "LOCATION_SK",
-									"type": "Int64"
-								},
-								"sink": {
-									"name": "LOCATION_SK",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "zipcode",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ZIP",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "city",
-									"type": "String"
-								},
-								"sink": {
-									"name": "CITY",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "state",
-									"type": "String"
-								},
-								"sink": {
-									"name": "STATE",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "DI_CreatedID",
-									"type": "String"
-								},
-								"sink": {
-									"name": "DI_JOB_ID",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "DI_Created_dt",
-									"type": "String"
-								},
-								"sink": {
-									"name": "DI_CREATED_DT",
-									"type": "DateTime"
-								}
-							}
-						]
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "ds_source_location_2_parquet",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "ds_snowflake_location",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
 				"name": "Data flow1",
 				"type": "ExecuteDataFlow",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "copy_2_parquet_location",
