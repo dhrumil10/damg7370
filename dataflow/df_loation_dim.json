@@ -193,7 +193,9 @@
 				"          COUNTRY,",
 				"          LATITUDE = latitude,",
 				"          LONGITUDE = longitude,",
-				"          PID = pid",
+				"          PID = pid,",
+				"          DI_CREATED_DT = created_dt,",
+				"          ADDRESS_SK",
 				"     )) ~> sinkoplocation"
 			]
 		}
