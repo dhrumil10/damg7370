@@ -2,7 +2,7 @@
 	"name": "SnowflakeTablesink",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Snowflakelocation",
+			"referenceName": "Snowflake_DIM_LOCATION",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -37,7 +37,7 @@
 		],
 		"typeProperties": {
 			"schema": "STAGING",
-			"table": "LOCATION_DIM"
+			"table": "DIM_ADDRESS"
 		}
 	}
 }
