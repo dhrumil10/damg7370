@@ -110,7 +110,7 @@
 				"          CRASH_ID = ID,",
 				"          crash_fatal_fl,",
 				"          case_id,",
-				"          street_name,",
+				"          street_address = street_name,",
 				"          rpt_block_num,",
 				"          rpt_street_name,",
 				"          rpt_street_sfx,",
