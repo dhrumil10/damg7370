@@ -677,16 +677,6 @@
 							},
 							{
 								"source": {
-									"name": "case_id",
-									"type": "String"
-								},
-								"sink": {
-									"name": "CASE_ID",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "Primary_address",
 									"type": "String"
 								},
@@ -1072,6 +1062,16 @@
 								},
 								"sink": {
 									"name": "REPORTED_STREET_PREFIX",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "case_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CASE_ID",
 									"type": "String"
 								}
 							}
