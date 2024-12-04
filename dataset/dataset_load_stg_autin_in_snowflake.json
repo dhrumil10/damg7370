@@ -2,7 +2,7 @@
 	"name": "dataset_load_stg_autin_in_snowflake",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_blobstorage",
+			"referenceName": "ls_blob_storage",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "ID.parquet",
-				"container": "silver-final-project-container"
+				"fileName": "Austin_Crash_Report_Data_-_Crash_Level_Records_20241129.parquet",
+				"container": "bronze-final-project-container"
 			},
 			"compressionCodec": "snappy"
 		},
