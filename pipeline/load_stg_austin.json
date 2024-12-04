@@ -601,14 +601,7 @@
 			{
 				"name": "parquet_df_to_snowflake",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "source_austin",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.00:30:00",
 					"retry": 2,
