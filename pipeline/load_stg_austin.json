@@ -1016,6 +1016,10 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Crash_timestamp_US_Central",
+									"type": "String"
+								},
 								"sink": {
 									"name": "CRASH_TIMESTAMP__US_CENTRAL",
 									"type": "String"
