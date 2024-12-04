@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "LOCATION_DIM_SNOWFLAKE",
+						"referenceName": "ds_parquet_2_location",
 						"type": "DatasetReference"
 					},
 					"name": "sourceslocation"
@@ -48,19 +48,18 @@
 				"     JObID as string (\"1\")",
 				"}",
 				"source(output(",
-				"          ADDRESS_SK as string,",
-				"          {Street Name} as string,",
-				"          CITY as string,",
-				"          COUNTRY as string,",
-				"          LATITUDE as string,",
-				"          LONGITUDE as string,",
-				"          DI_CREATED_DT as string,",
-				"          PID as string",
+				"          state_fips as string,",
+				"          state as string,",
+				"          state_abbr as string,",
+				"          zipcode as string,",
+				"          county as string,",
+				"          city as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: true,",
 				"     inferDriftedColumnTypes: true,",
-				"     format: 'table') ~> sourceslocation",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> sourceslocation",
 				"source(output(",
 				"          ADDRESS_SK as decimal(38,0)",
 				"     ),",
