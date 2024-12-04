@@ -50,6 +50,9 @@
 				},
 				{
 					"name": "select4"
+				},
+				{
+					"name": "select5"
 				}
 			],
 			"scriptLines": [
@@ -147,19 +150,21 @@
 				"        concat(trim(derived_street_name), ' ', upper(trim(rpt_street_sfx)))  \r",
 				")\r",
 				") ~> derivedcolumn",
+				"select5 select(skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select4",
 				"derivedcolumn select(mapColumn(",
-				"          address_sk = ADDRESS_SK,",
-				"          {Street Name} = derived_street_name,",
-				"          CITY,",
-				"          COUNTRY,",
 				"          latitude,",
 				"          longitude,",
+				"          CITY,",
+				"          COUNTRY,",
 				"          Di_workflow_name,",
+				"          ADDRESS_SK,",
 				"          created_dt,",
-				"          pid",
+				"          pid,",
+				"          {street name} = derived_street_name",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select4",
+				"     skipDuplicateMapOutputs: true) ~> select5",
 				"select4 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
