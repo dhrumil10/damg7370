@@ -140,7 +140,6 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     mapColumn(",
-				"          Crash_ID,",
 				"          crash_fatal_fl,",
 				"          case_id,",
 				"          Primary_address,",
@@ -182,7 +181,7 @@
 				"          Is_temporary_record,",
 				"          Law_enforcement_fatality_count,",
 				"          Reported_street_prefix,",
-				"          ID",
+				"          CrashID = ID",
 				"     )) ~> transformedaustinstg"
 			]
 		}
