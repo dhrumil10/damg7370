@@ -69,7 +69,7 @@
 				"     query: 'select NVL(MAX(address_sk),0) as address_sk  from DIM_address',",
 				"     format: 'query') ~> source1",
 				"sourceslocation, source1 union(byName: true)~> union1",
-				"union1 keyGenerate(output(address_sk as long),",
+				"union1 keyGenerate(output(ADDRESS_SK as long),",
 				"     startAt: 1L,",
 				"     stepValue: 1L) ~> surrogateKey1",
 				"surrogateKey1 derive(DI_JOB_ID = DI_JOB_ID,",
