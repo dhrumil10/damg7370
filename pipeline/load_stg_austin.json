@@ -638,7 +638,7 @@
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "ls_blob_storage",
+							"referenceName": "linkedService1",
 							"type": "LinkedServiceReference"
 						}
 					},
