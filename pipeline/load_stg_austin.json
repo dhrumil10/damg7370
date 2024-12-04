@@ -672,7 +672,17 @@
 								},
 								"sink": {
 									"name": "CRASH_FATAL_FL",
-									"type": "Boolean"
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "case_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CASE_ID",
+									"type": "String"
 								}
 							},
 							{
@@ -692,6 +702,16 @@
 								},
 								"sink": {
 									"name": "SECONDARY_ADDRESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "rpt_block_num",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RPT_BLOCK_NUM",
 									"type": "String"
 								}
 							},
@@ -733,6 +753,26 @@
 								"sink": {
 									"name": "ROAD_CONSTR_ZONE_FL",
 									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "latitude",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LATITUDE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "longitude",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LONGITUDE",
+									"type": "String"
 								}
 							},
 							{
@@ -813,6 +853,16 @@
 								"sink": {
 									"name": "DEATH_CNT",
 									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "units_involved",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UNITS_INVOLVED",
+									"type": "String"
 								}
 							},
 							{
@@ -927,6 +977,26 @@
 							},
 							{
 								"source": {
+									"name": "onsys_fl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ONSYS_FL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "private_dr_fl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRIVATE_DR_FL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "micromobility_serious_injury_count",
 									"type": "String"
 								},
@@ -967,56 +1037,6 @@
 							},
 							{
 								"source": {
-									"name": "Law_enforcement_fatality_count",
-									"type": "String"
-								},
-								"sink": {
-									"name": "LAW_ENFORCEMENT_FATALITY_COUNT",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "Reported_street_prefix",
-									"type": "String"
-								},
-								"sink": {
-									"name": "REPORTED_STREET_PREFIX",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "case_id",
-									"type": "String"
-								},
-								"sink": {
-									"name": "CASE_ID",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "rpt_block_num",
-									"type": "String"
-								},
-								"sink": {
-									"name": "RPT_BLOCK_NUM",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "longitude",
-									"type": "String"
-								},
-								"sink": {
-									"name": "LONGITUDE",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "Is_deleted",
 									"type": "String"
 								},
@@ -1037,31 +1057,21 @@
 							},
 							{
 								"source": {
-									"name": "units_involved",
+									"name": "Law_enforcement_fatality_count",
 									"type": "String"
 								},
 								"sink": {
-									"name": "UNITS_INVOLVED",
-									"type": "String"
+									"name": "LAW_ENFORCEMENT_FATALITY_COUNT",
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "onsys_fl",
+									"name": "Reported_street_prefix",
 									"type": "String"
 								},
 								"sink": {
-									"name": "ONSYS_FL",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "private_dr_fl",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PRIVATE_DR_FL",
+									"name": "REPORTED_STREET_PREFIX",
 									"type": "String"
 								}
 							}
