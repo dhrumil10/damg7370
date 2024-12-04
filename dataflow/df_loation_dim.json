@@ -25,11 +25,7 @@
 						"referenceName": "LOCATION_DIM_SNOWFLAKE",
 						"type": "DatasetReference"
 					},
-					"name": "sinkoplocation",
-					"rejectedDataLinkedService": {
-						"referenceName": "ls_blob_storage",
-						"type": "LinkedServiceReference"
-					}
+					"name": "sinkoplocation"
 				}
 			],
 			"transformations": [
@@ -182,7 +178,7 @@
 				"     insertable:true,",
 				"     updateable:false,",
 				"     upsertable:false,",
-				"     truncate:true,",
+				"     recreate:true,",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
