@@ -128,7 +128,6 @@
 				"          Is_temporary_record,",
 				"          Law_enforcement_fatality_count,",
 				"          Reported_street_prefix,",
-				"          Street_name,",
 				"          ID",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
@@ -183,7 +182,7 @@
 				"          Is_temporary_record,",
 				"          Law_enforcement_fatality_count,",
 				"          Reported_street_prefix,",
-				"          Street_name",
+				"          ID",
 				"     )) ~> transformedaustinstg"
 			]
 		}
