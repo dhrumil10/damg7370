@@ -12,7 +12,15 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SnowflakeTable1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "derivedColumn1"
@@ -75,7 +83,7 @@
 				"source1 derive(Crash_ID = ID,",
 				"          Crash_timestamp_US_Central = toDate(Crash_timestamp_US_Central, 'MM/dd/yyyy', 'en-US'),",
 				"          Crash_timestamp = toTimestamp(Crash_timestamp_US_Central, 'MM/dd/yyyy HH:mm', 'EST', 'en-US'),",
-				"          created_dt = toString(currentUTC()),",
+				"          created_dt = toString(currentTimestamp()),",
 				"          pid = \"cdferff123djfDJRG32kf\") ~> derivedColumn1",
 				"derivedColumn1 select(mapColumn(",
 				"          ID,",
@@ -115,15 +123,28 @@
 				"          private_dr_fl,",
 				"          micromobility_serious_injury_count,",
 				"          micromobility_death_count,",
-				"          Crash_timestamp_US_Central,",
+				"          Crash_date = Crash_timestamp_US_Central,",
 				"          Crash_timestamp,",
 				"          Is_deleted,",
 				"          Is_temporary_record,",
 				"          Law_enforcement_fatality_count,",
-				"          Reported_street_prefix",
+				"          Reported_street_prefix,",
+				"          created_dt,",
+				"          pid",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     truncate:true,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     stageInsert: true) ~> sink1"
 			]
 		}
 	}
