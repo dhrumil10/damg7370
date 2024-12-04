@@ -186,17 +186,7 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     stageInsert: true,",
-				"     mapColumn(",
-				"          {Street Name} = {street name},",
-				"          CITY,",
-				"          COUNTRY,",
-				"          LATITUDE = latitude,",
-				"          LONGITUDE = longitude,",
-				"          PID = pid,",
-				"          DI_CREATED_DT = created_dt,",
-				"          ADDRESS_SK",
-				"     )) ~> sinkoplocation"
+				"     stageInsert: true) ~> sinkoplocation"
 			]
 		}
 	}
