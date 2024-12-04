@@ -1074,6 +1074,24 @@
 									"name": "REPORTED_STREET_PREFIX",
 									"type": "String"
 								}
+							},
+							{
+								"source": {
+									"name": "\"edo443IIa554DF\""
+								},
+								"sink": {
+									"name": "PID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "'12/01/2024'"
+								},
+								"sink": {
+									"name": "CREATED_DT",
+									"type": "String"
+								}
 							}
 						]
 					}
