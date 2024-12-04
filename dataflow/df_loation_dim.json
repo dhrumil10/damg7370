@@ -182,17 +182,7 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     stageInsert: true,",
-				"     mapColumn(",
-				"          ADDRESS_SK,",
-				"          {Street Name} = {street name},",
-				"          CITY,",
-				"          COUNTRY,",
-				"          LATITUDE = latitude,",
-				"          LONGITUDE = longitude,",
-				"          DI_CREATED_DT = created_dt,",
-				"          PID = pid",
-				"     )) ~> sinkoplocation"
+				"     stageInsert: true) ~> sinkoplocation"
 			]
 		}
 	}
