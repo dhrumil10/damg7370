@@ -697,16 +697,6 @@
 							},
 							{
 								"source": {
-									"name": "rpt_block_num",
-									"type": "String"
-								},
-								"sink": {
-									"name": "RPT_BLOCK_NUM",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "rpt_street_name",
 									"type": "String"
 								},
@@ -1072,6 +1062,16 @@
 								},
 								"sink": {
 									"name": "CASE_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "rpt_block_num",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RPT_BLOCK_NUM",
 									"type": "String"
 								}
 							}
