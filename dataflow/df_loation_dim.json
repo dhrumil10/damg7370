@@ -149,7 +149,8 @@
 				"    derived_street_name, \r",
 				"        concat(trim(derived_street_name), ' ', upper(trim(rpt_street_sfx)))  \r",
 				")\r",
-				") ~> derivedcolumn",
+				",",
+				"          latitude = toString(latitude)) ~> derivedcolumn",
 				"select5 select(skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select4",
 				"derivedcolumn select(mapColumn(",
@@ -185,7 +186,15 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     stageInsert: true) ~> sinkoplocation"
+				"     stageInsert: true,",
+				"     mapColumn(",
+				"          {Street Name} = {street name},",
+				"          CITY,",
+				"          COUNTRY,",
+				"          LATITUDE = latitude,",
+				"          LONGITUDE = longitude,",
+				"          PID = pid",
+				"     )) ~> sinkoplocation"
 			]
 		}
 	}
