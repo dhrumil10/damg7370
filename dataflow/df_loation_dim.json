@@ -125,8 +125,7 @@
 				"    (isNull(rpt_block_num)) || (rpt_street_name == 'NOT REPORTED') , \r",
 				"    street_name, \r",
 				"        concat(trim(rpt_block_num), ' ', upper(trim(rpt_street_name) ))\r",
-				")\r",
-				") ~> derivedColumn1",
+				")) ~> derivedColumn1",
 				"sourceslocation select(mapColumn(",
 				"          street_name,",
 				"          rpt_block_num,",
@@ -144,8 +143,7 @@
 				"    (isNull(rpt_street_sfx)) , \r",
 				"    derived_street_name, \r",
 				"        concat(trim(derived_street_name), ' ', upper(trim(rpt_street_sfx)))  \r",
-				")\r",
-				",",
+				"),",
 				"          latitude = toString(latitude)) ~> derivedcolumn",
 				"select5 select(skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select4",
@@ -182,7 +180,17 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     stageInsert: true) ~> sinkoplocation"
+				"     stageInsert: true,",
+				"     mapColumn(",
+				"          ADDRESS_SK,",
+				"          {Street Name} = {street name},",
+				"          CITY,",
+				"          COUNTRY,",
+				"          LATITUDE = latitude,",
+				"          LONGITUDE = longitude,",
+				"          DI_CREATED_DT = created_dt,",
+				"          PID = pid",
+				"     )) ~> sinkoplocation"
 			]
 		}
 	}
