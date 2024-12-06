@@ -15,7 +15,7 @@
 				"scale": 0
 			},
 			{
-				"name": "Street Name",
+				"name": "STREET_NAME",
 				"type": "VARCHAR"
 			},
 			{
@@ -32,6 +32,10 @@
 			},
 			{
 				"name": "LONGITUDE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "DI_WORKFLOW_NAME",
 				"type": "VARCHAR"
 			},
 			{
