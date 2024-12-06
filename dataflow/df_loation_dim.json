@@ -108,7 +108,7 @@
 				"     inferDriftedColumnTypes: true,",
 				"     format: 'table') ~> sourceslocation",
 				"source(output(",
-				"          ADDRESS_SK as long",
+				"          ADDRESS_SK as decimal(38,0)",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: true,",
