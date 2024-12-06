@@ -198,7 +198,7 @@
 				"          LATITUDE = latitude,",
 				"          LONGITUDE = longitude,",
 				"          DI_WORKFLOW_NAME = Di_workflow_name,",
-				"          DI_CREATED_DT = created_dt,",
+				"          DI_CREATED_DT = Di_workflow_name,",
 				"          PID = pid",
 				"     )) ~> sinkoplocation"
 			]
