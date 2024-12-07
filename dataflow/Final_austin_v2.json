@@ -27,6 +27,9 @@
 				},
 				{
 					"name": "select1"
+				},
+				{
+					"name": "derivedColumn2"
 				}
 			],
 			"scriptLines": [
@@ -117,13 +120,12 @@
 				"          Di_workflow_name = \"Austin_Crash_Report_Data_-_Crash_Level_Records_20241129.tsv\",",
 				"          ID = 'AST'+ID,",
 				"          CITY = 'AUSTIN',",
-				"          COUNTRY = 'UNITED STATES',",
-				"          Street_name = iif(    (isNull(rpt_block_num)) || (rpt_street_name == 'NOT REPORTED') ,     street_name,         concat(trim(rpt_block_num), ' ', upper(trim(rpt_street_name) )))) ~> derivedColumn1",
-				"derivedColumn1 select(mapColumn(",
+				"          COUNTRY = 'UNITED STATES') ~> derivedColumn1",
+				"derivedColumn2 select(mapColumn(",
 				"          CRASH_ID = ID,",
 				"          crash_fatal_fl,",
 				"          case_id,",
-				"          street_name = derivedColumn1@street_name,",
+				"          street_name,",
 				"          rpt_block_num,",
 				"          rpt_street_name,",
 				"          rpt_street_sfx,",
@@ -169,6 +171,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> select1",
+				"derivedColumn1 derive(street_name = iif(    (isNull(rpt_block_num)) || (rpt_street_name == 'NOT REPORTED') ,     street_name,         concat(trim(rpt_block_num), ' ', upper(trim(rpt_street_name) )))) ~> derivedColumn2",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: true,",
 				"     deletable:false,",
