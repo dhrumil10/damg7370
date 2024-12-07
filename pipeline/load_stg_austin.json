@@ -575,8 +575,6 @@
 			{
 				"name": "Final_austin_row",
 				"type": "ExecuteDataFlow",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "source_austin",
