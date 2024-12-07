@@ -25,18 +25,6 @@
 				"type": "VARCHAR"
 			},
 			{
-				"name": "RPT_BLOCK_NUM",
-				"type": "VARCHAR"
-			},
-			{
-				"name": "RPT_STREET_NAME",
-				"type": "VARCHAR"
-			},
-			{
-				"name": "RPT_STREET_SFX",
-				"type": "VARCHAR"
-			},
-			{
 				"name": "CRASH_SPEED_LIMIT",
 				"type": "VARCHAR"
 			},
@@ -55,36 +43,6 @@
 			{
 				"name": "CRASH_SEV_ID",
 				"type": "VARCHAR"
-			},
-			{
-				"name": "SUS_SERIOUS_INJRY_CNT",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "NONINCAP_INJRY_CNT",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "POSS_INJRY_CNT",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "NON_INJRY_CNT",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "UNKN_INJRY_CNT",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
 			},
 			{
 				"name": "TOT_INJRY_CNT",
