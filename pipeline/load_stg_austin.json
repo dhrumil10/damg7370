@@ -604,37 +604,6 @@
 					},
 					"traceLevel": "Fine"
 				}
-			},
-			{
-				"name": "Final_austin_v2",
-				"type": "ExecuteDataFlow",
-				"dependsOn": [
-					{
-						"activity": "Final_austin_row",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.00:30:00",
-					"retry": 2,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataflow": {
-						"referenceName": "Final_austin_v2",
-						"type": "DataFlowReference"
-					},
-					"compute": {
-						"coreCount": 8,
-						"computeType": "General"
-					},
-					"traceLevel": "Fine"
-				}
 			}
 		],
 		"annotations": []
