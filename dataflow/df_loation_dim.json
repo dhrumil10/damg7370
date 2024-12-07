@@ -141,7 +141,8 @@
 				"     skipDuplicateMapOutputs: true) ~> select3",
 				"derivedColumn1 derive(latitude = toString(latitude),",
 				"          longitude = toString(longitude),",
-				"          derived_street_name = iif(isNull(derived_street_name) || derived_street_name=='','Not Reported',derived_street_name)) ~> derivedcolumn",
+				"          derived_street_name = iif(isNull(derived_street_name) || derived_street_name=='','Not Reported',derived_street_name),",
+				"          ADDRESS_SK = iif(isNull(ADDRESS_SK),-1,toInteger(ADDRESS_SK))) ~> derivedcolumn",
 				"select5 select(mapColumn(",
 				"          latitude,",
 				"          longitude,",
@@ -198,7 +199,7 @@
 				"          LATITUDE = latitude,",
 				"          LONGITUDE = longitude,",
 				"          DI_WORKFLOW_NAME = Di_workflow_name,",
-				"          DI_CREATED_DT = Di_workflow_name,",
+				"          DI_CREATED_DT = created_dt,",
 				"          PID = pid",
 				"     )) ~> sinkoplocation"
 			]
