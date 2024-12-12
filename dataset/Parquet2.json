@@ -17,56 +17,12 @@
 		},
 		"schema": [
 			{
+				"name": "actor_id",
+				"type": "INT32"
+			},
+			{
 				"name": "film_id",
 				"type": "INT32"
-			},
-			{
-				"name": "title",
-				"type": "UTF8"
-			},
-			{
-				"name": "description",
-				"type": "UTF8"
-			},
-			{
-				"name": "release_year",
-				"type": "UTF8"
-			},
-			{
-				"name": "language_id",
-				"type": "INT32"
-			},
-			{
-				"name": "original_language_id",
-				"type": "INT32"
-			},
-			{
-				"name": "rental_duration",
-				"type": "INT32"
-			},
-			{
-				"name": "rental_rate",
-				"type": "DECIMAL",
-				"precision": 4,
-				"scale": 2
-			},
-			{
-				"name": "length",
-				"type": "INT32"
-			},
-			{
-				"name": "replacement_cost",
-				"type": "DECIMAL",
-				"precision": 5,
-				"scale": 2
-			},
-			{
-				"name": "rating",
-				"type": "UTF8"
-			},
-			{
-				"name": "special_features",
-				"type": "UTF8"
 			},
 			{
 				"name": "last_update",
