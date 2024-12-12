@@ -9,14 +9,38 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
-				"name": "LANGUAGE_ID",
+				"name": "PAYMENT_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
 			},
 			{
-				"name": "NAME",
-				"type": "VARCHAR"
+				"name": "CUSTOMER_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "STAFF_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "RENTAL_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT",
+				"type": "NUMBER",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "PAYMENT_DATE",
+				"type": "TIMESTAMP_NTZ"
 			},
 			{
 				"name": "LAST_UPDATE",
@@ -25,7 +49,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "LANGUAGE"
+			"table": "PAYMENT"
 		}
 	}
 }
