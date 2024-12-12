@@ -246,22 +246,22 @@
 							},
 							{
 								"source": {
-									"name": "category_id",
-									"type": "Int32"
+									"name": "title",
+									"type": "String"
 								},
 								"sink": {
-									"name": "CATEGORY_ID",
-									"type": "Int64"
+									"name": "TITLE",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "last_update",
-									"type": "DateTime"
+									"name": "description",
+									"type": "String"
 								},
 								"sink": {
-									"name": "LAST_UPDATE",
-									"type": "DateTime"
+									"name": "DESCRIPTION",
+									"type": "String"
 								}
 							}
 						]
