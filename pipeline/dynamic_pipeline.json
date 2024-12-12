@@ -236,71 +236,21 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "address_id",
+									"name": "category_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "ADDRESS_ID",
+									"name": "CATEGORY_ID",
 									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "address",
+									"name": "name",
 									"type": "String"
 								},
 								"sink": {
-									"name": "ADDRESS",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "address2",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ADDRESS2",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "district",
-									"type": "String"
-								},
-								"sink": {
-									"name": "DISTRICT",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "city_id",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "CITY_ID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "postal_code",
-									"type": "String"
-								},
-								"sink": {
-									"name": "POSTAL_CODE",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "phone",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PHONE",
+									"name": "NAME",
 									"type": "String"
 								}
 							},
