@@ -7,10 +7,29 @@
 		},
 		"annotations": [],
 		"type": "SnowflakeV2Table",
-		"schema": [],
+		"schema": [
+			{
+				"name": "ACTOR_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "FIRST_NAME",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "LAST_NAME",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "LAST_UPDATE",
+				"type": "TIMESTAMP_NTZ"
+			}
+		],
 		"typeProperties": {
-			"schema": "STAGE",
-			"table": "ACTOR_SAKILA"
+			"schema": "STG",
+			"table": "ACTOR"
 		}
 	}
 }
