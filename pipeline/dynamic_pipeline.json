@@ -236,11 +236,31 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "payment_id",
+									"name": "rental_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "PAYMENT_ID",
+									"name": "RENTAL_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "rental_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "RENTAL_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "inventory_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "INVENTORY_ID",
 									"type": "Int64"
 								}
 							},
@@ -256,42 +276,22 @@
 							},
 							{
 								"source": {
+									"name": "return_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "RETURN_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
 									"name": "staff_id",
 									"type": "Int32"
 								},
 								"sink": {
 									"name": "STAFF_ID",
 									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "rental_id",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "RENTAL_ID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "amount",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "AMOUNT",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "payment_date",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "PAYMENT_DATE",
-									"type": "DateTime"
 								}
 							},
 							{
