@@ -236,22 +236,82 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "country_id",
+									"name": "customer_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "COUNTRY_ID",
+									"name": "CUSTOMER_ID",
 									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "country",
+									"name": "store_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "STORE_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "first_name",
 									"type": "String"
 								},
 								"sink": {
-									"name": "COUNTRY",
+									"name": "FIRST_NAME",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "last_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "email",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMAIL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ADDRESS_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "active",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ACTIVE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "create_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATE_DATE",
+									"type": "DateTime"
 								}
 							},
 							{
