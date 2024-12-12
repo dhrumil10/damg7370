@@ -236,6 +236,16 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "inventory_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "INVENTORY_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
 									"name": "film_id",
 									"type": "Int32"
 								},
@@ -246,22 +256,22 @@
 							},
 							{
 								"source": {
-									"name": "title",
-									"type": "String"
+									"name": "store_id",
+									"type": "Int32"
 								},
 								"sink": {
-									"name": "TITLE",
-									"type": "String"
+									"name": "STORE_ID",
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "description",
-									"type": "String"
+									"name": "last_update",
+									"type": "DateTime"
 								},
 								"sink": {
-									"name": "DESCRIPTION",
-									"type": "String"
+									"name": "LAST_UPDATE",
+									"type": "DateTime"
 								}
 							}
 						]
