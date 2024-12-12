@@ -9,13 +9,13 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
-				"name": "ACTOR_ID",
+				"name": "FILM_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
 			},
 			{
-				"name": "FILM_ID",
+				"name": "CATEGORY_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
@@ -27,7 +27,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "FILM_ACTOR"
+			"table": "FILM_CATEGORY"
 		}
 	}
 }
