@@ -236,22 +236,32 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "category_id",
+									"name": "city_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "CATEGORY_ID",
+									"name": "CITY_ID",
 									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "name",
+									"name": "city",
 									"type": "String"
 								},
 								"sink": {
-									"name": "NAME",
+									"name": "CITY",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "country_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "COUNTRY_ID",
+									"type": "Int64"
 								}
 							},
 							{
