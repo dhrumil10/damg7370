@@ -9,14 +9,20 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
-				"name": "CATEGORY_ID",
+				"name": "CITY_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
 			},
 			{
-				"name": "NAME",
+				"name": "CITY",
 				"type": "VARCHAR"
+			},
+			{
+				"name": "COUNTRY_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
 			},
 			{
 				"name": "LAST_UPDATE",
@@ -25,7 +31,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "CATEGORY"
+			"table": "CITY"
 		}
 	}
 }
