@@ -235,15 +235,63 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
+								"source": {
+									"name": "payment_id",
+									"type": "Int32"
+								},
 								"sink": {
-									"name": "LANGUAGE_ID",
+									"name": "PAYMENT_ID",
 									"type": "Int64"
 								}
 							},
 							{
+								"source": {
+									"name": "customer_id",
+									"type": "Int32"
+								},
 								"sink": {
-									"name": "NAME",
-									"type": "String"
+									"name": "CUSTOMER_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "staff_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "STAFF_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "rental_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RENTAL_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "amount",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "AMOUNT",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "payment_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PAYMENT_DATE",
+									"type": "DateTime"
 								}
 							},
 							{
