@@ -9,7 +9,17 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
-				"name": "PAYMENT_ID",
+				"name": "RENTAL_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "RENTAL_DATE",
+				"type": "TIMESTAMP_NTZ"
+			},
+			{
+				"name": "INVENTORY_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
@@ -21,26 +31,14 @@
 				"scale": 0
 			},
 			{
+				"name": "RETURN_DATE",
+				"type": "TIMESTAMP_NTZ"
+			},
+			{
 				"name": "STAFF_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
-			},
-			{
-				"name": "RENTAL_ID",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "AMOUNT",
-				"type": "NUMBER",
-				"precision": 5,
-				"scale": 2
-			},
-			{
-				"name": "PAYMENT_DATE",
-				"type": "TIMESTAMP_NTZ"
 			},
 			{
 				"name": "LAST_UPDATE",
@@ -49,7 +47,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "PAYMENT"
+			"table": "RENTAL"
 		}
 	}
 }
