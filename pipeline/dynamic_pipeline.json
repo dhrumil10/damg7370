@@ -236,21 +236,21 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "actor_id",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "ACTOR_ID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
 									"name": "film_id",
 									"type": "Int32"
 								},
 								"sink": {
 									"name": "FILM_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "category_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CATEGORY_ID",
 									"type": "Int64"
 								}
 							},
