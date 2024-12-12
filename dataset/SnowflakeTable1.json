@@ -9,22 +9,14 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
-				"name": "INVENTORY_ID",
+				"name": "LANGUAGE_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
 			},
 			{
-				"name": "FILM_ID",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "STORE_ID",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
+				"name": "NAME",
+				"type": "VARCHAR"
 			},
 			{
 				"name": "LAST_UPDATE",
@@ -33,7 +25,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "INVENTORY"
+			"table": "LANGUAGE"
 		}
 	}
 }
