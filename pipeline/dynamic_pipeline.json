@@ -236,122 +236,22 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "actor_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ACTOR_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
 									"name": "film_id",
 									"type": "Int32"
 								},
 								"sink": {
 									"name": "FILM_ID",
 									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "title",
-									"type": "String"
-								},
-								"sink": {
-									"name": "TITLE",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "description",
-									"type": "String"
-								},
-								"sink": {
-									"name": "DESCRIPTION",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "release_year",
-									"type": "String"
-								},
-								"sink": {
-									"name": "RELEASE_YEAR",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "language_id",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "LANGUAGE_ID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "original_language_id",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "ORIGINAL_LANGUAGE_ID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "rental_duration",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "RENTAL_DURATION",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "rental_rate",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "RENTAL_RATE",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "length",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "LENGTH",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "replacement_cost",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "REPLACEMENT_COST",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "rating",
-									"type": "String"
-								},
-								"sink": {
-									"name": "RATING",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "special_features",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SPECIAL_FEATURES",
-									"type": "String"
 								}
 							},
 							{
