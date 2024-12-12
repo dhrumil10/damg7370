@@ -236,61 +236,31 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "rental_id",
+									"name": "store_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "RENTAL_ID",
+									"name": "STORE_ID",
 									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "rental_date",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "RENTAL_DATE",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "inventory_id",
+									"name": "manager_staff_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "INVENTORY_ID",
+									"name": "MANAGER_STAFF_ID",
 									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "customer_id",
+									"name": "address_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "CUSTOMER_ID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "return_date",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "RETURN_DATE",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "staff_id",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "STAFF_ID",
+									"name": "ADDRESS_ID",
 									"type": "Int64"
 								}
 							},
