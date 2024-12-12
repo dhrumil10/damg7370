@@ -236,82 +236,122 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "customer_id",
+									"name": "film_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "CUSTOMER_ID",
+									"name": "FILM_ID",
 									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "store_id",
+									"name": "title",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TITLE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "description",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "release_year",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RELEASE_YEAR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "language_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "STORE_ID",
+									"name": "LANGUAGE_ID",
 									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "first_name",
-									"type": "String"
-								},
-								"sink": {
-									"name": "FIRST_NAME",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "last_name",
-									"type": "String"
-								},
-								"sink": {
-									"name": "LAST_NAME",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "email",
-									"type": "String"
-								},
-								"sink": {
-									"name": "EMAIL",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "address_id",
+									"name": "original_language_id",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "ADDRESS_ID",
+									"name": "ORIGINAL_LANGUAGE_ID",
 									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "active",
+									"name": "rental_duration",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "RENTAL_DURATION",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "rental_rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "RENTAL_RATE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "length",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "LENGTH",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "replacement_cost",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "REPLACEMENT_COST",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "rating",
 									"type": "String"
 								},
 								"sink": {
-									"name": "ACTIVE",
+									"name": "RATING",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "create_date",
-									"type": "DateTime"
+									"name": "special_features",
+									"type": "String"
 								},
 								"sink": {
-									"name": "CREATE_DATE",
-									"type": "DateTime"
+									"name": "SPECIAL_FEATURES",
+									"type": "String"
 								}
 							},
 							{
