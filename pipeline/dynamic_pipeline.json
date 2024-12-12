@@ -235,33 +235,15 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
-								"source": {
-									"name": "inventory_id",
-									"type": "Int32"
-								},
 								"sink": {
-									"name": "INVENTORY_ID",
+									"name": "LANGUAGE_ID",
 									"type": "Int64"
 								}
 							},
 							{
-								"source": {
-									"name": "film_id",
-									"type": "Int32"
-								},
 								"sink": {
-									"name": "FILM_ID",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "store_id",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "STORE_ID",
-									"type": "Int64"
+									"name": "NAME",
+									"type": "String"
 								}
 							},
 							{
