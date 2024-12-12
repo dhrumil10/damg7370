@@ -223,7 +223,52 @@
 							"type": "SnowflakeImportCopyCommand"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "actor_id",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ACTOR_ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "first_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FIRST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "last_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "last_update",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "LAST_UPDATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
