@@ -9,20 +9,42 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
-				"name": "CITY_ID",
+				"name": "CUSTOMER_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
 			},
 			{
-				"name": "CITY",
+				"name": "STORE_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "FIRST_NAME",
 				"type": "VARCHAR"
 			},
 			{
-				"name": "COUNTRY_ID",
+				"name": "LAST_NAME",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "EMAIL",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "ADDRESS_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
+			},
+			{
+				"name": "ACTIVE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "CREATE_DATE",
+				"type": "TIMESTAMP_NTZ"
 			},
 			{
 				"name": "LAST_UPDATE",
@@ -31,7 +53,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "COUNTRY"
+			"table": "CUSTOMER"
 		}
 	}
 }
