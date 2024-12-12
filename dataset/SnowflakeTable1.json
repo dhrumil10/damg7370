@@ -9,23 +9,31 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
+				"name": "INVENTORY_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
 				"name": "FILM_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
 			},
 			{
-				"name": "TITLE",
-				"type": "VARCHAR"
+				"name": "STORE_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
 			},
 			{
-				"name": "DESCRIPTION",
-				"type": "VARCHAR"
+				"name": "LAST_UPDATE",
+				"type": "TIMESTAMP_NTZ"
 			}
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "FILM_TEXT"
+			"table": "INVENTORY"
 		}
 	}
 }
