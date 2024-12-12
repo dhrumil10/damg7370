@@ -15,19 +15,17 @@
 				"scale": 0
 			},
 			{
-				"name": "CATEGORY_ID",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
+				"name": "TITLE",
+				"type": "VARCHAR"
 			},
 			{
-				"name": "LAST_UPDATE",
-				"type": "TIMESTAMP_NTZ"
+				"name": "DESCRIPTION",
+				"type": "VARCHAR"
 			}
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "FILM_CATEGORY"
+			"table": "FILM_TEXT"
 		}
 	}
 }
