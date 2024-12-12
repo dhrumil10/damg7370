@@ -10,14 +10,22 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "payment.parquet",
+				"fileName": "rental.parquet",
 				"fileSystem": "snowstagging"
 			},
 			"compressionCodec": "snappy"
 		},
 		"schema": [
 			{
-				"name": "payment_id",
+				"name": "rental_id",
+				"type": "INT32"
+			},
+			{
+				"name": "rental_date",
+				"type": "INT96"
+			},
+			{
+				"name": "inventory_id",
 				"type": "INT32"
 			},
 			{
@@ -25,22 +33,12 @@
 				"type": "INT32"
 			},
 			{
+				"name": "return_date",
+				"type": "INT96"
+			},
+			{
 				"name": "staff_id",
 				"type": "INT32"
-			},
-			{
-				"name": "rental_id",
-				"type": "INT32"
-			},
-			{
-				"name": "amount",
-				"type": "DECIMAL",
-				"precision": 5,
-				"scale": 2
-			},
-			{
-				"name": "payment_date",
-				"type": "INT96"
 			},
 			{
 				"name": "last_update",
