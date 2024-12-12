@@ -31,7 +31,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "CITY"
+			"table": "COUNTRY"
 		}
 	}
 }
