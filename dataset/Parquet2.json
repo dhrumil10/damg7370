@@ -10,22 +10,18 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "address.parquet",
+				"fileName": "category.parquet",
 				"fileSystem": "snowstagging"
 			},
 			"compressionCodec": "snappy"
 		},
 		"schema": [
 			{
-				"name": "actor_id",
+				"name": "category_id",
 				"type": "INT32"
 			},
 			{
-				"name": "first_name",
-				"type": "UTF8"
-			},
-			{
-				"name": "last_name",
+				"name": "name",
 				"type": "UTF8"
 			},
 			{
