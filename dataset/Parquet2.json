@@ -10,43 +10,63 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "customer.parquet",
+				"fileName": "film.parquet",
 				"fileSystem": "snowstagging"
 			},
 			"compressionCodec": "snappy"
 		},
 		"schema": [
 			{
-				"name": "customer_id",
+				"name": "film_id",
 				"type": "INT32"
 			},
 			{
-				"name": "store_id",
+				"name": "title",
+				"type": "UTF8"
+			},
+			{
+				"name": "description",
+				"type": "UTF8"
+			},
+			{
+				"name": "release_year",
+				"type": "UTF8"
+			},
+			{
+				"name": "language_id",
 				"type": "INT32"
 			},
 			{
-				"name": "first_name",
-				"type": "UTF8"
-			},
-			{
-				"name": "last_name",
-				"type": "UTF8"
-			},
-			{
-				"name": "email",
-				"type": "UTF8"
-			},
-			{
-				"name": "address_id",
+				"name": "original_language_id",
 				"type": "INT32"
 			},
 			{
-				"name": "active",
+				"name": "rental_duration",
+				"type": "INT32"
+			},
+			{
+				"name": "rental_rate",
+				"type": "DECIMAL",
+				"precision": 4,
+				"scale": 2
+			},
+			{
+				"name": "length",
+				"type": "INT32"
+			},
+			{
+				"name": "replacement_cost",
+				"type": "DECIMAL",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "rating",
 				"type": "UTF8"
 			},
 			{
-				"name": "create_date",
-				"type": "INT96"
+				"name": "special_features",
+				"type": "UTF8"
 			},
 			{
 				"name": "last_update",
