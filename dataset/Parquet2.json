@@ -10,23 +10,27 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "film_text.parquet",
+				"fileName": "inventory.parquet",
 				"fileSystem": "snowstagging"
 			},
 			"compressionCodec": "snappy"
 		},
 		"schema": [
 			{
+				"name": "inventory_id",
+				"type": "INT32"
+			},
+			{
 				"name": "film_id",
 				"type": "INT32"
 			},
 			{
-				"name": "title",
-				"type": "UTF8"
+				"name": "store_id",
+				"type": "INT32"
 			},
 			{
-				"name": "description",
-				"type": "UTF8"
+				"name": "last_update",
+				"type": "INT96"
 			}
 		]
 	}
