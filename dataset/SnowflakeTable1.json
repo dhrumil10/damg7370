@@ -9,33 +9,19 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
-				"name": "RENTAL_ID",
+				"name": "STORE_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
 			},
 			{
-				"name": "RENTAL_DATE",
-				"type": "TIMESTAMP_NTZ"
-			},
-			{
-				"name": "INVENTORY_ID",
+				"name": "MANAGER_STAFF_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
 			},
 			{
-				"name": "CUSTOMER_ID",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "RETURN_DATE",
-				"type": "TIMESTAMP_NTZ"
-			},
-			{
-				"name": "STAFF_ID",
+				"name": "ADDRESS_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
@@ -47,7 +33,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "RENTAL"
+			"table": "STORE"
 		}
 	}
 }
