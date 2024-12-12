@@ -9,66 +9,16 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
+				"name": "ACTOR_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
 				"name": "FILM_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
-			},
-			{
-				"name": "TITLE",
-				"type": "VARCHAR"
-			},
-			{
-				"name": "DESCRIPTION",
-				"type": "VARCHAR"
-			},
-			{
-				"name": "RELEASE_YEAR",
-				"type": "VARCHAR"
-			},
-			{
-				"name": "LANGUAGE_ID",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "ORIGINAL_LANGUAGE_ID",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "RENTAL_DURATION",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "RENTAL_RATE",
-				"type": "NUMBER",
-				"precision": 4,
-				"scale": 2
-			},
-			{
-				"name": "LENGTH",
-				"type": "NUMBER",
-				"precision": 38,
-				"scale": 0
-			},
-			{
-				"name": "REPLACEMENT_COST",
-				"type": "NUMBER",
-				"precision": 5,
-				"scale": 2
-			},
-			{
-				"name": "RATING",
-				"type": "VARCHAR"
-			},
-			{
-				"name": "SPECIAL_FEATURES",
-				"type": "VARCHAR"
 			},
 			{
 				"name": "LAST_UPDATE",
@@ -77,7 +27,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "FILM"
+			"table": "FILM_ACTOR"
 		}
 	}
 }
