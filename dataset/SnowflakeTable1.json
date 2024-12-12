@@ -9,17 +9,35 @@
 		"type": "SnowflakeV2Table",
 		"schema": [
 			{
-				"name": "ACTOR_ID",
+				"name": "ADDRESS_ID",
 				"type": "NUMBER",
 				"precision": 38,
 				"scale": 0
 			},
 			{
-				"name": "FIRST_NAME",
+				"name": "ADDRESS",
 				"type": "VARCHAR"
 			},
 			{
-				"name": "LAST_NAME",
+				"name": "ADDRESS2",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "DISTRICT",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "CITY_ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "POSTAL_CODE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "PHONE",
 				"type": "VARCHAR"
 			},
 			{
@@ -29,7 +47,7 @@
 		],
 		"typeProperties": {
 			"schema": "STG",
-			"table": "ACTOR"
+			"table": "ADDRESS"
 		}
 	}
 }
