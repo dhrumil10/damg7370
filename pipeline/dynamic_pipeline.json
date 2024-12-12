@@ -195,7 +195,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "snowstagging//actor.parquet"
+					},
+					{
+						"name": "Destination",
+						"value": "STAGE.ACTOR_SAKILA"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "ParquetSource",
@@ -214,14 +223,7 @@
 							"type": "SnowflakeImportCopyCommand"
 						}
 					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "linkedService3",
-							"type": "LinkedServiceReference"
-						},
-						"path": "snowstagging"
-					}
+					"enableStaging": false
 				},
 				"inputs": [
 					{
